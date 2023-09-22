@@ -29,4 +29,20 @@ public class SquareTests {
 
         }
     }
+
+    @Test
+    void equalSquares(){
+        var s1 = new Square(3.0);
+        var s2 = new Square(3.0);
+        Assertions.assertEquals(s1, s2);
+        Assertions.assertTrue(s1.equals(s2));
+    }
+
+    @Test
+    void notEqualSquares(){
+        var s1 = new Square(4.0);
+        var s2 = new Square(3.0);
+        Assertions.assertNotEquals(s1, s2);
+        Assertions.assertTrue(!s1.equals(s2));
+    }
 }

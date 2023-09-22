@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 2.1, 2.2, 2.3">
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/TriangleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/TriangleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/RectangleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/RectangleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/SquareTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/SquareTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,15 +67,8 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TriangleTests.checkTriangleInequality">
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Hello" />
-      <module name="sandbox.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RectangleTests.cannotCreateRectangleWithNegativeSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RectangleTests.equalRotatedRectangles">
+    <configuration name="RectangleTests.equalRectangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sandbox.test" />
       <extension name="coverage">
         <pattern>
@@ -84,13 +78,29 @@
       </extension>
       <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
       <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.RectangleTests" />
-      <option name="METHOD_NAME" value="cannotCreateRectangleWithNegativeSide" />
+      <option name="METHOD_NAME" value="equalRectangles" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SquareTests.canCalculateArea" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RectangleTests.equalRotatedRectangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
+      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.RectangleTests" />
+      <option name="METHOD_NAME" value="equalRotatedRectangles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SquareTests.equalSquares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sandbox.test" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +110,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
       <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.SquareTests" />
-      <option name="METHOD_NAME" value="canCalculateArea" />
+      <option name="METHOD_NAME" value="equalSquares" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TriangleTests.cannotCreateTriangleWithWrongSide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SquareTests.notEqualSquares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sandbox.test" />
       <extension name="coverage">
         <pattern>
@@ -115,8 +125,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.TriangleTests" />
-      <option name="METHOD_NAME" value="cannotCreateTriangleWithWrongSide" />
+      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.SquareTests" />
+      <option name="METHOD_NAME" value="notEqualSquares" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RectangleTests.equalRotatedRectangles" />
+        <item itemvalue="JUnit.RectangleTests.equalRectangles" />
+        <item itemvalue="JUnit.SquareTests.notEqualSquares" />
+        <item itemvalue="JUnit.SquareTests.equalSquares" />
         <item itemvalue="JUnit.TriangleTests.checkTriangleInequality" />
-        <item itemvalue="JUnit.TriangleTests.cannotCreateTriangleWithWrongSide" />
-        <item itemvalue="JUnit.RectangleTests.cannotCreateRectangleWithNegativeSide" />
-        <item itemvalue="JUnit.SquareTests.canCalculateArea" />
-        <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695407499816</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Assignment 3">
+      <option name="closed" value="true" />
+      <created>1695408687838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695408687838</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -219,6 +237,7 @@
     <MESSAGE value="second commit" />
     <MESSAGE value="Geometry" />
     <MESSAGE value="Lessons 2.1, 2.2, 2.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lessons 2.1, 2.2, 2.3" />
+    <MESSAGE value="Assignment 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment 3" />
   </component>
 </project>
