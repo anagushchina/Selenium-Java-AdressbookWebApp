@@ -37,4 +37,19 @@ public class TriangleTests {
 
         }
     }
+
+    @Test
+    void equalTriangles(){
+        var t1 = new Triangle(3.0, 5.0, 4.0);
+        var t2 = new Triangle(3.0, 5.0, 4.0);
+        Assertions.assertEquals(t1, t2);
+        Assertions.assertTrue(t1.equals(t2));
+    }
+    @Test
+    void equalRotatedTriangles(){
+        var t1 = new Triangle(5,3,4);
+        var t2 = new Triangle(4,3,5);
+        Assertions.assertEquals(t1, t2);
+        Assertions.assertTrue(t1.equals(t2));
+    }
 }
