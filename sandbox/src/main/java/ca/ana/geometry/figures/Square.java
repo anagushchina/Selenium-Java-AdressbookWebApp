@@ -8,6 +8,12 @@ public record Square(double side) {
 //        this.side = side;
 //    }
 
+    public Square{
+        if(side<0){
+            throw new IllegalArgumentException("Square side cannot be negative");
+        }
+    }
+
 
     public static void printSquareArea(Square s){
         String text = String.format("Area of square with the side %f is equal %f", s.side, s.calculateArea());
