@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lesson 2.4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/main/java/ca/ana/geometry/figures/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/TriangleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/TriangleTests.java" afterDir="false" />
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 5">
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/LoginHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/model/GroupData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupCreationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupRemovalTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupRemovalTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +20,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/address_book_web_tests">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
       <ProjectState />
     </projectState>
@@ -25,12 +33,25 @@
         <task path="$PROJECT_DIR$/sandbox">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/address_book_web_tests">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="sandbox" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sandbox" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sandbox" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -61,88 +82,115 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "zulu-17",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.43333334",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TriangleTests.equalRotatedTriangles">
-    <configuration name="RectangleTests.equalRectangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="ApplicationManager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.GroupRemovalTests.removeGroupTest">
+    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.GroupCreationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="GroupRemovalTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.GroupRemovalTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="GroupRemovalTests.removeGroupTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.GroupRemovalTests.removeGroupTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="GroupCreationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="address_book_web_tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.RectangleTests" />
-      <option name="METHOD_NAME" value="equalRectangles" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.GroupCreationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RectangleTests.equalRotatedRectangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
+    <configuration name="GroupRemovalTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="address_book_web_tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.RectangleTests" />
-      <option name="METHOD_NAME" value="equalRotatedRectangles" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SquareTests.notEqualSquares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.SquareTests" />
-      <option name="METHOD_NAME" value="notEqualSquares" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TriangleTests.equalRotatedTriangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.TriangleTests" />
-      <option name="METHOD_NAME" value="equalRotatedTriangles" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TriangleTests.equalTriangles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.ana.geometry.figures.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.ana.geometry.figures" />
-      <option name="MAIN_CLASS_NAME" value="ca.ana.geometry.figures.TriangleTests" />
-      <option name="METHOD_NAME" value="equalTriangles" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.GroupRemovalTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,11 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TriangleTests.equalRotatedTriangles" />
-        <item itemvalue="JUnit.TriangleTests.equalTriangles" />
-        <item itemvalue="JUnit.RectangleTests.equalRotatedRectangles" />
-        <item itemvalue="JUnit.RectangleTests.equalRectangles" />
-        <item itemvalue="JUnit.SquareTests.notEqualSquares" />
+        <item itemvalue="Gradle.GroupRemovalTests.removeGroupTest" />
+        <item itemvalue="Gradle.GroupRemovalTests" />
+        <item itemvalue="Gradle.GroupCreationTests" />
+        <item itemvalue="JUnit.GroupRemovalTests" />
+        <item itemvalue="JUnit.GroupCreationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +283,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695410446858</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Assignment 4">
+      <option name="closed" value="true" />
+      <created>1695412840989</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695412840990</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Assignment 5">
+      <option name="closed" value="true" />
+      <created>1695442436595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695442436595</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -246,17 +310,8 @@
     <MESSAGE value="Lessons 2.1, 2.2, 2.3" />
     <MESSAGE value="Assignment 3" />
     <MESSAGE value="Lesson 2.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 2.4" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sandbox/src/test/java/ca/ana/geometry/figures/TriangleTests.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Assignment 4" />
+    <MESSAGE value="Assignment 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment 5" />
   </component>
 </project>
