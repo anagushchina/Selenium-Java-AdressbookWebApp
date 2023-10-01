@@ -11,6 +11,5 @@ public class GroupModificationTests extends TestBase{
             appMan.groups().createGroup(new GroupData("", "", ""));
         }
         appMan.groups().modifyGroup(new GroupData().withName("modified_name"));
-
     }
 }

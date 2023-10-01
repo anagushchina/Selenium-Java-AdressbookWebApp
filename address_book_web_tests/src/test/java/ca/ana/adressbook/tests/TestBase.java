@@ -11,7 +11,7 @@ public class TestBase {
         if (appMan == null){
             appMan = new ApplicationManager();
         }
-        appMan.initDriver(System.getProperty("browser", "firefox"));
+        appMan.initDriver(System.getProperty("browser", "chrome"));
     }
 
 }

@@ -7,7 +7,6 @@ public class GroupHelper extends HelperBase{
 
     public GroupHelper(ApplicationManager manager){
         super(manager);
-
     }
 
     public void openGroupsPage() {
@@ -58,7 +57,6 @@ public class GroupHelper extends HelperBase{
     private void deleteSelectedGroup() {
         click(By.name("delete"));
     }
-
 
     private void returnToGroupsPage() {
         click(By.linkText("group page"));
