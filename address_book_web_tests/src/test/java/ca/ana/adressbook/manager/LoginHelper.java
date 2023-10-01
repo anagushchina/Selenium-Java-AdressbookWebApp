@@ -2,17 +2,15 @@ package ca.ana.adressbook.manager;
 
 import org.openqa.selenium.By;
 
-public class LoginHelper {
+public class LoginHelper extends HelperBase{
 
-    private final ApplicationManager manager;
 
     public LoginHelper(ApplicationManager manager){
-
-        this.manager = manager;
+        super(manager);
     }
     void login(String username, String password) {
-        manager.driver.findElement(By.name("user")).sendKeys(username);
-        manager.driver.findElement(By.name("pass")).sendKeys(password);
-        manager.driver.findElement(By.cssSelector("input[type=submit]")).click();
+        type(By.name("user"), username);
+        type(By.name("pass"), password);
+        click(By.cssSelector("input[type=submit]"));
     }
 }

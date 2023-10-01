@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 5">
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/LoginHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/model/GroupData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupCreationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupRemovalTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/ApplicationManager.java" afterDir="false" />
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 3.1, 3.2, 3.3, 3.4">
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupCreationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupRemovalTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +77,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "zulu-17",
+    "last_opened_file_path": "/Users/ana/IdeaProjects/Java_for_testers/address_book_web_tests/src/test/java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.43333334",
@@ -88,108 +85,27 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/address_book_web_tests/src/test/java" />
+    </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="ApplicationManager" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.GroupRemovalTests.removeGroupTest">
-    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GroupCreationTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="GroupRemovalTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GroupRemovalTests&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="GroupRemovalTests.removeGroupTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GroupRemovalTests.removeGroupTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="GroupCreationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="address_book_web_tests.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="ca.ana.adressbook.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GroupCreationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GroupRemovalTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.GroupRemovalTests" />
+      <option name="PACKAGE_NAME" value="ca.ana.adressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ca.ana.adressbook.tests.GroupCreationTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -210,10 +126,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GroupRemovalTests.removeGroupTest" />
-        <item itemvalue="Gradle.GroupRemovalTests" />
-        <item itemvalue="Gradle.GroupCreationTests" />
-        <item itemvalue="JUnit.GroupRemovalTests" />
         <item itemvalue="JUnit.GroupCreationTests" />
       </list>
     </recent_temporary>
@@ -299,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695442436595</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Lessons 3.1, 3.2, 3.3, 3.4">
+      <option name="closed" value="true" />
+      <created>1696115023366</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696115023367</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -312,6 +232,7 @@
     <MESSAGE value="Lesson 2.4" />
     <MESSAGE value="Assignment 4" />
     <MESSAGE value="Assignment 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assignment 5" />
+    <MESSAGE value="Lessons 3.1, 3.2, 3.3, 3.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lessons 3.1, 3.2, 3.3, 3.4" />
   </component>
 </project>
