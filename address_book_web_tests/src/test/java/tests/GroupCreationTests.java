@@ -8,19 +8,16 @@ public class GroupCreationTests extends TestBase{
 
     @Test
     public void createGroupTest() {
-        appMan.openGroupsPage();
-        appMan.createGroup(new GroupData("name", "header", "footer"));
+        appMan.initGroupHelper().createGroup(new GroupData("name", "header", "footer"));
     }
 
     @Test
     public void createGroupWithEmptyNameTest() {
-        appMan.openGroupsPage();
-        appMan.createGroup(new GroupData());
+        appMan.initGroupHelper().createGroup(new GroupData());
     }
 
     @Test
     public void createGroupWithNameOnlyTest() {
-        appMan.openGroupsPage();
-        appMan.createGroup(new GroupData().withName("name only"));
+        appMan.initGroupHelper().createGroup(new GroupData().withName("name only"));
     }
 }
