@@ -1,0 +1,228 @@
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"delegatedBuild\" value=\"false\" />\n        <option name=\"testRunner\" value=\"PLATFORM\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/address_book_web_tests\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$/address_book_web_tests\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n      <GradleProjectSettings>\n        <option name=\"delegatedBuild\" value=\"false\" />\n        <option name=\"testRunner\" value=\"PLATFORM\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/sandbox\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$/sandbox\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	
++++ b/.idea/gradle.xml	
+@@ -4,8 +4,6 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+-        <option name="delegatedBuild" value="false" />
+-        <option name="testRunner" value="PLATFORM" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
+         <option name="modules">
+           <set>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"8b831fec-57bb-4e0b-a155-aa26b0adf831\" name=\"Changes\" comment=\"Lessons 3.1, 3.2, 3.3, 3.4\">\n      <change beforePath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupCreationTests.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupRemovalTests.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$/address_book_web_tests\">\n      <ProjectState />\n    </projectState>\n    <projectState path=\"$PROJECT_DIR$/sandbox\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$/sandbox\">\n          <activation />\n        </task>\n        <task path=\"$PROJECT_DIR$/address_book_web_tests\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"sandbox\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"sandbox\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"sandbox\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Dependencies\" type=\"6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2VlFSncRqKGtkK6MsisernYQdNs\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"jdk.selected.JAVA_MODULE\": \"zulu-17\",\n    \"last_opened_file_path\": \"/Users/ana/IdeaProjects/Java_for_testers/address_book_web_tests/src/test/java\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.15\",\n    \"project.structure.side.proportion\": \"0.43333334\",\n    \"settings.editor.selected.configurable\": \"reference.settingsdialog.project.gradle\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/address_book_web_tests/src/test/java\" />\n    </key>\n    <key name=\"MoveMembersDialog.RECENTS_KEY\">\n      <recent name=\"ApplicationManager\" />\n    </key>\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"GroupCreationTests\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"address_book_web_tests.test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"ca.ana.adressbook.tests.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"ca.ana.adressbook.tests\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"ca.ana.adressbook.tests.GroupCreationTests\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <module name=\"sandbox\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <module name=\"sandbox\" />\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JUnit.GroupCreationTests\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"8b831fec-57bb-4e0b-a155-aa26b0adf831\" name=\"Changes\" comment=\"\" />\n      <created>1695402763788</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1695402763788</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"initial commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695402796967</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695402796967</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"first commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695402949240</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695402949240</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"second commit\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695402978857</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695402978858</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Geometry\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695403205144</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695403205145</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Lessons 2.1, 2.2, 2.3\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695407499816</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695407499816</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Assignment 3\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695408687838</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695408687838</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Lesson 2.4\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695410446858</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695410446858</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Assignment 4\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695412840989</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695412840990</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Assignment 5\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1695442436595</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1695442436595</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Lessons 3.1, 3.2, 3.3, 3.4\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1696115023366</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1696115023367</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"11\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"initial commit\" />\n    <MESSAGE value=\"first commit\" />\n    <MESSAGE value=\"second commit\" />\n    <MESSAGE value=\"Geometry\" />\n    <MESSAGE value=\"Lessons 2.1, 2.2, 2.3\" />\n    <MESSAGE value=\"Assignment 3\" />\n    <MESSAGE value=\"Lesson 2.4\" />\n    <MESSAGE value=\"Assignment 4\" />\n    <MESSAGE value=\"Assignment 5\" />\n    <MESSAGE value=\"Lessons 3.1, 3.2, 3.3, 3.4\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Lessons 3.1, 3.2, 3.3, 3.4\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,12 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 3.1, 3.2, 3.3, 3.4">
+-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupCreationTests.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/GroupRemovalTests.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/manager/ApplicationManager.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/ca/ana/adressbook/tests/TestBase.java" afterDir="false" />
+-    </list>
++    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="modul 3" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -64,6 +59,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="modul3" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="2VlFSncRqKGtkK6MsisernYQdNs" />
+@@ -95,7 +95,103 @@
+       <recent name="" />
+     </key>
+   </component>
+-  <component name="RunManager">
++  <component name="RunManager" selected="Gradle.GroupCreationTests">
++    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value=":test" />
++            <option value="--tests" />
++            <option value="&quot;ca.ana.adressbook.tests.GroupCreationTests&quot;" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <ForceTestExec>true</ForceTestExec>
++      <method v="2" />
++    </configuration>
++    <configuration name="GroupCreationTests.createGroupTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="-Pbrowser=chrome" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value=":test" />
++            <option value="--tests" />
++            <option value="&quot;ca.ana.adressbook.tests.GroupCreationTests.createGroupTest&quot;" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <ForceTestExec>true</ForceTestExec>
++      <method v="2" />
++    </configuration>
++    <configuration name="GroupModificationTests.modifyGroupTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="-Pbrowser=chrome" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value=":test" />
++            <option value="--tests" />
++            <option value="&quot;ca.ana.adressbook.tests.GroupModificationTests.modifyGroupTest&quot;" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <ForceTestExec>true</ForceTestExec>
++      <method v="2" />
++    </configuration>
++    <configuration name="Tests in 'ca.ana.adressbook.tests'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$/address_book_web_tests" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="-Pbrowser=chrome" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value=":test" />
++            <option value="--tests" />
++            <option value="&quot;ca.ana.adressbook.tests.*&quot;" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <ForceTestExec>true</ForceTestExec>
++      <method v="2" />
++    </configuration>
+     <configuration name="GroupCreationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="address_book_web_tests.test" />
+       <extension name="coverage">
+@@ -106,7 +202,9 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="ca.ana.adressbook.tests" />
+       <option name="MAIN_CLASS_NAME" value="ca.ana.adressbook.tests.GroupCreationTests" />
++      <option name="METHOD_NAME" value="" />
+       <option name="TEST_OBJECT" value="class" />
++      <option name="VM_PARAMETERS" value="-ea -Dbrowser=firefox" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -124,9 +222,20 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <list>
++      <item itemvalue="Gradle.GroupCreationTests" />
++      <item itemvalue="Gradle.Tests in 'ca.ana.adressbook.tests'" />
++      <item itemvalue="Gradle.GroupModificationTests.modifyGroupTest" />
++      <item itemvalue="Gradle.GroupCreationTests.createGroupTest" />
++      <item itemvalue="JUnit.GroupCreationTests" />
++    </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Gradle.GroupCreationTests" />
+         <item itemvalue="JUnit.GroupCreationTests" />
++        <item itemvalue="Gradle.GroupCreationTests.createGroupTest" />
++        <item itemvalue="Gradle.GroupModificationTests.modifyGroupTest" />
++        <item itemvalue="Gradle.Tests in 'ca.ana.adressbook.tests'" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -219,7 +328,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1696115023367</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="Lessons 3.5, 3.6">
++      <option name="closed" value="true" />
++      <created>1696120598796</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1696120598796</updated>
++    </task>
++    <task id="LOCAL-00012" summary="Assignment 6">
++      <option name="closed" value="true" />
++      <created>1696164983411</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1696164983411</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -233,6 +358,9 @@
+     <MESSAGE value="Assignment 4" />
+     <MESSAGE value="Assignment 5" />
+     <MESSAGE value="Lessons 3.1, 3.2, 3.3, 3.4" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Lessons 3.1, 3.2, 3.3, 3.4" />
++    <MESSAGE value="Lessons 3.5, 3.6" />
++    <MESSAGE value="Assignment 6" />
++    <MESSAGE value="modul 3" />
++    <option name="LAST_COMMIT_MESSAGE" value="modul 3" />
+   </component>
+ </project>
+\ No newline at end of file
