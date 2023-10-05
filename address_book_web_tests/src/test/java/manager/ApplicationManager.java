@@ -11,6 +11,7 @@ public class ApplicationManager {
     protected WebDriver driver;
     private LoginHelper loginHelper;
     private GroupHelper groupHelper;
+    private ContactHelper contactHelper;
 
     public LoginHelper initLoginHelper(){
         if(loginHelper == null) {
@@ -24,6 +25,13 @@ public class ApplicationManager {
             groupHelper = new GroupHelper(this);
         }
         return groupHelper;
+    }
+
+    public ContactHelper initContactHelper() {
+        if (contactHelper == null){
+            contactHelper = new ContactHelper(this);
+        }
+        return contactHelper;
     }
 
     public void initSession(String browser) {
@@ -50,5 +58,6 @@ public class ApplicationManager {
             return false;
         }
     }
+
 
 }
