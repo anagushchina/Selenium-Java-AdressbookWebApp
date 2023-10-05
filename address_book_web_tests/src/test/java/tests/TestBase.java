@@ -13,7 +13,7 @@ public class TestBase {
         if(appMan == null){
             appMan = new ApplicationManager();
         }
-        appMan.initSession();
+        appMan.initSession(System.getProperty("browser","chrome"));
     }
 
 }
