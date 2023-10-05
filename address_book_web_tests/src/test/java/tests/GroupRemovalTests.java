@@ -8,7 +8,7 @@ public class GroupRemovalTests extends TestBase{
     @Test
     public void removeGroupTest() {
         if(!appMan.initGroupHelper().isGroupPresent()){
-            appMan.initGroupHelper().createGroup(new GroupData("", "", ""));
+            appMan.initGroupHelper().createGroup(new GroupData());
         }
         appMan.initGroupHelper().removeGroup();
     }
