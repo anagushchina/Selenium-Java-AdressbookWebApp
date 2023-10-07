@@ -27,4 +27,13 @@ public class TestBase {
         return result;
     }
 
+    public static String randomNumber(int n){
+        var rnd = new Random();
+        var result = "";
+        for(int i = 1; i<=n; i++){
+            result = result + rnd.nextInt(9);
+        }
+        return result;
+    }
+
 }
