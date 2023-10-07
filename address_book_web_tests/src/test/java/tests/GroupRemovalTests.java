@@ -24,10 +24,6 @@ public class GroupRemovalTests extends TestBase{
         }
         appMan.initGroupHelper().removeAllGroups();
         Assertions.assertEquals(0, appMan.initGroupHelper().getCount());
-
-
-
-
     }
 
 }
