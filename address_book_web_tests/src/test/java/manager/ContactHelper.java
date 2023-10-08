@@ -67,5 +67,6 @@ public class ContactHelper extends HelperBase{
             checkbox.click();
         }
         deleteSelectedContacts();
+        manager.driver.switchTo().alert().accept();
     }
 }
