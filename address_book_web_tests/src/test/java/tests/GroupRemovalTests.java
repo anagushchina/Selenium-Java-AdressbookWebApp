@@ -4,6 +4,10 @@ import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class GroupRemovalTests extends TestBase{
 
     @Test
@@ -11,10 +15,13 @@ public class GroupRemovalTests extends TestBase{
         if(appMan.initGroupHelper().getCount() == 0){
             appMan.initGroupHelper().createGroup(new GroupData());
         }
-        int groupCount = appMan.initGroupHelper().getCount();
-        appMan.initGroupHelper().removeGroup();
-        int newGroupCount = appMan.initGroupHelper().getCount();
-        Assertions.assertEquals(groupCount - 1, newGroupCount);
+        List<GroupData> oldGroups = appMan.initGroupHelper().getList();
+        var index = new Random().nextInt(oldGroups.size());
+        appMan.initGroupHelper().removeGroup(oldGroups.get(index));
+        List<GroupData> newGroups = appMan.initGroupHelper().getList();
+        var expectedGroups = new ArrayList<>(oldGroups);
+        expectedGroups.remove(index);
+        Assertions.assertEquals(expectedGroups, newGroups);
     }
 
     @Test
