@@ -2,6 +2,7 @@ package manager;
 
 import model.ContactData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,10 +58,12 @@ public class ContactHelper extends HelperBase{
     }
 
     private void selectContact(ContactData contact) {
-        click(By.xpath(String.format(
-                "//td[text()='%s']/preceding-sibling::td[text()='%s']/preceding-sibling::td",
-                contact.firstName(),
-                contact.lastName())));
+        WebElement contactEntry = manager.driver.findElement(By.xpath(String.format(
+                "//tr[@name='entry' and child::td[text()='%s'] and child::td[text()='%s']]",
+                contact.lastName(),
+                contact.firstName()
+                )));
+        contactEntry.findElement(By.xpath(".//input[@type='checkbox']")).click();
     }
 
     public int getCount() {
@@ -85,5 +88,27 @@ public class ContactHelper extends HelperBase{
             contactList.add(new ContactData().withName(firstName, lastName));
         }
         return contactList;
+    }
+
+    public void modifyContact(ContactData modifyingContact, ContactData modifiedContact) {
+        selectContact(modifyingContact);
+        initSelectedContactModification(modifyingContact);
+        fillContactForm(modifiedContact);
+        submitContactModification();
+        returnToHomePage();
+    }
+
+    private void submitContactModification() {
+        manager.driver.findElement(By.name("update")).click();
+    }
+
+    private void initSelectedContactModification(ContactData contact) {
+        WebElement contactEntry = manager.driver.findElement(By.xpath(String.format(
+                "//tr[@name='entry' and child::td[text()='%s'] and child::td[text()='%s']]",
+                contact.lastName(),
+                contact.firstName()
+        )));
+        contactEntry.findElement(By.xpath(".//img[@title='Edit']")).click();
+
     }
 }
