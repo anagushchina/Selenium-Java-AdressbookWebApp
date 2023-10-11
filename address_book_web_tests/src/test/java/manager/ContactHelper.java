@@ -58,12 +58,13 @@ public class ContactHelper extends HelperBase{
     }
 
     private void selectContact(ContactData contact) {
-        WebElement contactEntry = manager.driver.findElement(By.xpath(String.format(
-                "//tr[@name='entry' and child::td[text()='%s'] and child::td[text()='%s']]",
-                contact.lastName(),
-                contact.firstName()
-                )));
-        contactEntry.findElement(By.xpath(".//input[@type='checkbox']")).click();
+        click(By.cssSelector(String.format("input[value='%s']", contact.id())));
+//        WebElement contactEntry = manager.driver.findElement(By.xpath(String.format(
+//                "//tr[@name='entry' and child::td[text()='%s'] and child::td[text()='%s']]",
+//                contact.lastName(),
+//                contact.firstName()
+//                )));
+//        contactEntry.findElement(By.xpath(".//input[@type='checkbox']")).click();
     }
 
     public int getCount() {
@@ -76,7 +77,7 @@ public class ContactHelper extends HelperBase{
             checkbox.click();
         }
         deleteSelectedContacts();
-        manager.driver.switchTo().alert().accept();
+//        manager.driver.switchTo().alert().accept();
     }
 
     public List<ContactData> getList() {
@@ -85,14 +86,14 @@ public class ContactHelper extends HelperBase{
         for(var entry: entries){
             var lastName = entry.findElement(By.xpath(".//td[2]")).getText();
             var firstName = entry.findElement(By.xpath(".//td[3]")).getText();
-            contactList.add(new ContactData().withName(firstName, lastName));
+            var id = entry.findElement(By.cssSelector("input[type='checkbox']")).getAttribute("value");
+            contactList.add(new ContactData().withId(id).withName(firstName, lastName));
         }
         return contactList;
     }
 
     public void modifyContact(ContactData modifyingContact, ContactData modifiedContact) {
-        selectContact(modifyingContact);
-        initSelectedContactModification(modifyingContact);
+        initContactModification(modifyingContact);
         fillContactForm(modifiedContact);
         submitContactModification();
         returnToHomePage();
@@ -102,12 +103,9 @@ public class ContactHelper extends HelperBase{
         manager.driver.findElement(By.name("update")).click();
     }
 
-    private void initSelectedContactModification(ContactData contact) {
+    private void initContactModification(ContactData contact) {
         WebElement contactEntry = manager.driver.findElement(By.xpath(String.format(
-                "//tr[@name='entry' and child::td[text()='%s'] and child::td[text()='%s']]",
-                contact.lastName(),
-                contact.firstName()
-        )));
+                "//input[@value='%s']//ancestor::tr[@name='entry']", contact.id())));
         contactEntry.findElement(By.xpath(".//img[@title='Edit']")).click();
 
     }

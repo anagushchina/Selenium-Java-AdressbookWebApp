@@ -23,11 +23,12 @@ public class ContactModificationTest extends TestBase{
         appMan.initContactHelper().modifyContact(modifyingContact, modifiedContact);
         List<ContactData> newContacts = appMan.initContactHelper().getList();
         var expectedContacts = new ArrayList<>(oldContacts);
-        expectedContacts.set(index, modifiedContact.withName("modified first", "modified last"));
-        Comparator<ContactData> compareByLastName = (o1, o2) ->
-                CharSequence.compare(o1.lastName(), o2.lastName());
-        newContacts.sort(compareByLastName);
-        expectedContacts.sort(compareByLastName);
+        expectedContacts.set(index, modifiedContact.withId(modifyingContact.id()));
+        Comparator<ContactData> compareById = (o1, o2) -> {
+            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+        };
+        newContacts.sort(compareById);
+        expectedContacts.sort(compareById);
         Assertions.assertEquals(expectedContacts, newContacts);
     }
 }

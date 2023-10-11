@@ -18,12 +18,12 @@ public class ContactCreationTests extends TestBase{
         List<ContactData> oldContacts = appMan.initContactHelper().getList();
         appMan.initContactHelper().createContact(contact);
         List<ContactData> newContacts = appMan.initContactHelper().getList();
-        Comparator<ContactData> compareByLastName = (o1, o2) ->
-                CharSequence.compare(o1.lastName(), o2.lastName());
-        newContacts.sort(compareByLastName);
+        Comparator<ContactData> compareById = (o1, o2) ->
+        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
+        newContacts.sort(compareById);
         var expectedContacts = new ArrayList<>(oldContacts);
-        expectedContacts.add(contact.withAddress("").withMobilePhone("").withEmail(""));
-        expectedContacts.sort(compareByLastName);
+        expectedContacts.add(contact.withId(newContacts.get(newContacts.size()-1).id()).withAddress("").withMobilePhone("").withEmail(""));
+        expectedContacts.sort(compareById);
         Assertions.assertEquals(expectedContacts, newContacts);
     }
     public static List<ContactData> contactsProvider() {
@@ -38,7 +38,7 @@ public class ContactCreationTests extends TestBase{
 //                }
 //            }
 //        }
-        for(int i=1; i<=3; i++ ){
+        for(int i=1; i<=4; i++ ){
             result.add(new ContactData().withMinSetOfData(randomString(i*3), randomString(i*3), randomString(i*10), randomNumber(10),randomString(i*5)));
         }
         return result;
