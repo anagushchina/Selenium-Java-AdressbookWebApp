@@ -47,7 +47,11 @@ public class ContactHelper extends HelperBase{
         type(By.name("email"), contact.email());
         type(By.name("email2"), contact.email2());
         type(By.name("email3"), contact.email3());
+        if(!(contact.photo() =="")){
+            attach(By.name("photo"), contact.photo());}
     }
+
+
 
     private void initContactCreation() {
         click(By.xpath("//a[text()='add new']"));

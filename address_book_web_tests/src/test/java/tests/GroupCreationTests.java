@@ -1,5 +1,6 @@
 package tests;
 
+import common.Utils;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -48,9 +49,9 @@ public class GroupCreationTests extends TestBase{
         }
         for(int i=1; i<=5; i++ ){
             result.add(new GroupData()
-                    .withName(randomString(i*10))
-                    .withHeader(randomString(i*5))
-                    .withFooter(randomString(i*4)));
+                    .withName(Utils.randomString(i*10))
+                    .withHeader(Utils.randomString(i*5))
+                    .withFooter(Utils.randomString(i*4)));
         }
         return result;
     }
@@ -75,7 +76,7 @@ public class GroupCreationTests extends TestBase{
     public static List<String> groupNamesProvider() {
         var result = new ArrayList<>(List.of("some name 1", "some name 2"));
         for(int i=1; i<=5; i++ ){
-            result.add(randomString(7));
+            result.add(Utils.randomString(7));
         }
         return result;
     }

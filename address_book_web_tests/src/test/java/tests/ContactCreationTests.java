@@ -1,5 +1,6 @@
 package tests;
 
+import common.Utils;
 import model.ContactData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ public class ContactCreationTests extends TestBase{
 //            }
 //        }
         for(int i=1; i<=4; i++ ){
-            result.add(new ContactData().withMinSetOfData(randomString(i*3), randomString(i*3), randomString(i*10), randomNumber(10),randomString(i*5)));
+            result.add(new ContactData().withMinSetOfData(Utils.randomString(i*3), Utils.randomString(i*3), Utils.randomString(i*10), Utils.randomNumber(10), Utils.randomString(i*5)));
         }
         return result;
     }
@@ -52,6 +53,15 @@ public class ContactCreationTests extends TestBase{
     @Test
     public void createContactWithNameTest() {
         appMan.initContactHelper().createContact(new ContactData().withName("First", "Last"));
+    }
+
+    @Test
+    public void createContactWithPhoto(){
+        var contact = new ContactData()
+                .withLastName(Utils.randomString(10))
+                .withFirstName(Utils.randomString(5))
+                .withPhoto(Utils.randomFile("src/test/resources/images"));
+        appMan.initContactHelper().createContact(contact);
     }
 
 
