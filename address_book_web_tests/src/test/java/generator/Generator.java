@@ -4,9 +4,11 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import common.Utils;
 import model.GroupData;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -76,8 +78,12 @@ public class Generator {
             try (var writer = new FileWriter(output)) {
                 writer.write(json);
             }
-
-        } else {
+        }
+        else if (format.equals("yaml")) {
+            var yamlMapper = new YAMLMapper();
+            yamlMapper.writeValue(new File(output), data);
+        }
+        else {
             throw new IllegalArgumentException("Unknown file format " + format);
         }
     }
