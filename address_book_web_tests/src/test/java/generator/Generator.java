@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import common.Utils;
 import model.GroupData;
 
-import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -39,9 +39,9 @@ public class Generator {
     }
 
     private Object generate() {
-        if (type.equals("groups")){
+        if (type.equals("groups")) {
             return generateGroups();
-        } else if (type.equals("contacts")){
+        } else if (type.equals("contacts")) {
             return generateContacts();
         } else {
             throw new IllegalArgumentException("Unknown type " + type);
@@ -50,11 +50,11 @@ public class Generator {
 
     private Object generateGroups() {
         var result = new ArrayList<GroupData>();
-        for(int i=1; i<=count; i++ ){
+        for (int i = 1; i <= count; i++) {
             result.add(new GroupData()
-                    .withName(Utils.randomString(i*10))
-                    .withHeader(Utils.randomString(i*5))
-                    .withFooter(Utils.randomString(i*4)));
+                    .withName(Utils.randomString(i * 10))
+                    .withHeader(Utils.randomString(i * 5))
+                    .withFooter(Utils.randomString(i * 4)));
         }
         return result;
     }
@@ -67,7 +67,16 @@ public class Generator {
         if (format.equals("json")) {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            objectMapper.writeValue(new File(output), data);
+
+//            writing data in file using jackson library:
+//            objectMapper.writeValue(new File(output), data);
+
+//            writing data in file using standard java library:
+            var json = objectMapper.writeValueAsString(data);
+            try (var writer = new FileWriter(output)) {
+                writer.write(json);
+            }
+
         } else {
             throw new IllegalArgumentException("Unknown file format " + format);
         }

@@ -9,7 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -51,8 +52,29 @@ public class GroupCreationTests extends TestBase{
 //                }
 //            }
 //        }
+
+//        3 ways to read groups.json file and save it in variable json:
+//        1. read and save the whole file using java.io.File library:
+//        var json = new File("groups.json");
+
+//        2. read and save the whole file using java.nio.file.Files library:
+//        var json = Files.readString(Paths.get("groups.json"));
+
+//        3. read by strings
+        var json = "";
+        try (var reader = new FileReader("groups.json");
+             var bReader = new BufferedReader(reader);){
+            var line = bReader.readLine();
+            while (line!=null){
+                json = json + line;
+                line = bReader.readLine();
+            }
+        }
+
+//        Analyzes json and converts strings into objects of specified type:
         ObjectMapper objectMapper = new ObjectMapper();
-        var value = objectMapper.readValue(new File("groups.json"), new TypeReference<List<GroupData>>() {});
+        var value = objectMapper.readValue(json, new TypeReference<List<GroupData>>() {});
+
         result.addAll(value);
         return result;
     }
