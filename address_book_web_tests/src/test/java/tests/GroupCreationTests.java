@@ -2,6 +2,7 @@ package tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import common.Utils;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
@@ -52,30 +53,39 @@ public class GroupCreationTests extends TestBase{
 //                }
 //            }
 //        }
+        var fileName = "groups.json";
+        var data = "";
 
-//        3 ways to read groups.json file and save it in variable json:
+//        Ways of reading a file and save it in the variable 'data':
 //        1. read and save the whole file using java.io.File library:
-//        var json = new File("groups.json");
+//        var data = new File(fileName);
 
 //        2. read and save the whole file using java.nio.file.Files library:
-//        var json = Files.readString(Paths.get("groups.json"));
+//        var data = Files.readString(Paths.get(fileName));
 
 //        3. read by strings
-        var json = "";
-        try (var reader = new FileReader("groups.json");
+        try (var reader = new FileReader(fileName);
              var bReader = new BufferedReader(reader);){
             var line = bReader.readLine();
             while (line!=null){
-                json = json + line;
+                data = data + line;
                 line = bReader.readLine();
             }
         }
 
-//        Analyzes json and converts strings into objects of specified type:
-        ObjectMapper objectMapper = new ObjectMapper();
-        var value = objectMapper.readValue(json, new TypeReference<List<GroupData>>() {});
-
-        result.addAll(value);
+//        Analyzes data and converts strings into objects of specified type:
+        if (fileName.equals("groups.json")) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            var value = objectMapper.readValue(data, new TypeReference<List<GroupData>>() {
+            });
+            result.addAll(value);
+        }
+        else if (fileName.equals("groups.xml")) {
+            XmlMapper xmlMapper = new XmlMapper();
+            var value = xmlMapper.readValue(data, new TypeReference<List<GroupData>>() {
+            });
+            result.addAll(value);
+        }
         return result;
     }
 
