@@ -53,8 +53,6 @@ public class GroupCreationTests extends TestBase{
 //                }
 //            }
 //        }
-        var fileName = "groups.json";
-        var data = "";
 
 //        Ways of reading a file and save it in the variable 'data':
 //        1. read and save the whole file using java.io.File library:
@@ -64,7 +62,8 @@ public class GroupCreationTests extends TestBase{
 //        var data = Files.readString(Paths.get(fileName));
 
 //        3. read by strings
-        try (var reader = new FileReader(fileName);
+        var data = "";
+        try (var reader = new FileReader("groups.json");
              var bReader = new BufferedReader(reader);){
             var line = bReader.readLine();
             while (line!=null){
@@ -74,18 +73,10 @@ public class GroupCreationTests extends TestBase{
         }
 
 //        Analyzes data and converts strings into objects of specified type:
-        if (fileName.equals("groups.json")) {
-            ObjectMapper objectMapper = new ObjectMapper();
-            var value = objectMapper.readValue(data, new TypeReference<List<GroupData>>() {
-            });
-            result.addAll(value);
-        }
-        else if (fileName.equals("groups.xml")) {
-            XmlMapper xmlMapper = new XmlMapper();
-            var value = xmlMapper.readValue(data, new TypeReference<List<GroupData>>() {
-            });
-            result.addAll(value);
-        }
+        ObjectMapper objectMapper = new ObjectMapper();
+        var value = objectMapper.readValue(data, new TypeReference<List<GroupData>>() {
+        });
+        result.addAll(value);
         return result;
     }
 

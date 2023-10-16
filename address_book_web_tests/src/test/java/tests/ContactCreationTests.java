@@ -1,5 +1,8 @@
 package tests;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import common.Utils;
 import model.ContactData;
 import org.junit.jupiter.api.Assertions;
@@ -7,6 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -27,7 +34,7 @@ public class ContactCreationTests extends TestBase{
         expectedContacts.sort(compareById);
         Assertions.assertEquals(expectedContacts, newContacts);
     }
-    public static List<ContactData> contactsProvider() {
+    public static List<ContactData> contactsProvider() throws IOException {
         var result = new ArrayList<ContactData>();
 //        for (var firstName : List.of("", randomString(5))) {
 //            for (var lastName : List.of("", randomString(5))) {
@@ -39,9 +46,10 @@ public class ContactCreationTests extends TestBase{
 //                }
 //            }
 //        }
-        for(int i=1; i<=4; i++ ){
-            result.add(new ContactData().withMinSetOfData(Utils.randomString(i*3), Utils.randomString(i*3), Utils.randomString(i*10), Utils.randomNumber(10), Utils.randomString(i*5)));
-        }
+        var data = new File("contacts.xml");
+        XmlMapper xmlMapper = new XmlMapper();
+        var value = xmlMapper.readValue(data, new TypeReference<List<ContactData>>() {});
+        result.addAll(value);
         return result;
     }
 
