@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class ApplicationManager {
@@ -33,6 +34,7 @@ public class ApplicationManager {
             driver.get(properties.getProperty("web.baseURL"));
             driver.manage().window().setSize(new Dimension(1440, 823));
             initLoginHelper().login(properties.getProperty("web.username"), properties.getProperty("web.password"));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
     }
 
@@ -80,6 +82,10 @@ public class ApplicationManager {
         } catch (NoSuchElementException exception){
             return false;
         }
+    }
+
+    public void refreshPage(){
+        driver.navigate().refresh();
     }
 
 

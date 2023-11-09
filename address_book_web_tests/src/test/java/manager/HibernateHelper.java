@@ -64,8 +64,12 @@ public class HibernateHelper extends HelperBase {
         return new ContactData()
                 .withId(String.valueOf(record.id))
                 .withFirstName(record.firstName)
+                .withMiddleName(record.middleName)
                 .withLastName(record.lastName)
-                .withAddress(record.address);
+                .withCompany(record.company)
+                .withAddress(record.address)
+                .withMobilePhone(record.mobilePhone)
+                .withEmail(record.email);
     }
 
     private static ContactRecord convert(ContactData data) {
@@ -73,7 +77,7 @@ public class HibernateHelper extends HelperBase {
         if (id.equals("")) {
             id = "0";
         }
-        return new ContactRecord(Integer.parseInt(id), data.firstName(), data.lastName(), data.address());
+        return new ContactRecord(Integer.parseInt(id), data.firstName(), data.middleName(), data.lastName(), data.company(), data.address(),  data.mobilePhone(), data.email());
     }
 
 
@@ -102,6 +106,26 @@ public class HibernateHelper extends HelperBase {
     public List<ContactData> getContactsInGroup(GroupData group) {
         return sessionFactory.fromSession(session -> {
             return convertContactList(session.get(GroupRecord.class, group.id()).contacts);
+        });
+    }
+
+    public List<ContactData> getContactsList() {
+        return convertContactList(sessionFactory.fromSession(session -> {
+            return session.createQuery("from ContactRecord", ContactRecord.class).list();
+        }));
+    }
+
+    public long getContactCount() {
+        return sessionFactory.fromSession(session -> {
+            return session.createQuery("select count (*) from ContactRecord", Long.class).getSingleResult();
+        });
+    }
+
+    public void createContact(ContactData contactData) {
+        sessionFactory.inSession(session -> {
+            session.getTransaction().begin();
+            session.persist(convert(contactData));
+            session.getTransaction().commit();
         });
     }
 }

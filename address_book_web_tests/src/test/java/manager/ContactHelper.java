@@ -36,7 +36,16 @@ public class ContactHelper extends HelperBase{
     public void deleteContact(ContactData contact) {
         selectContact(contact);
         deleteSelectedContacts();
-        returnToHomePage();
+        confirmDeleting();
+        waitForReturnToHomePage();
+    }
+
+    private void waitForReturnToHomePage() {
+        manager.driver.findElement(By.cssSelector("div.msgbox"));
+    }
+
+    private void confirmDeleting() {
+        manager.driver.switchTo().alert().accept();
     }
 
     public boolean isContactPresent(){
@@ -53,7 +62,9 @@ public class ContactHelper extends HelperBase{
 
     private void fillContactForm(ContactData contact) {
         type(By.name("firstname"), contact.firstName());
+        type(By.name("middlename"), contact.middleName());
         type(By.name("lastname"), contact.lastName());
+        type(By.name("company"), contact.company());
         type(By.name("address"), contact.address());
         type(By.name("home"), contact.homePhone());
         type(By.name("mobile"), contact.mobilePhone());
@@ -95,7 +106,8 @@ public class ContactHelper extends HelperBase{
             checkbox.click();
         }
         deleteSelectedContacts();
-//        manager.driver.switchTo().alert().accept();
+        confirmDeleting();
+        waitForReturnToHomePage();
     }
 
     public List<ContactData> getList() {
@@ -105,7 +117,7 @@ public class ContactHelper extends HelperBase{
             var lastName = entry.findElement(By.xpath(".//td[2]")).getText();
             var firstName = entry.findElement(By.xpath(".//td[3]")).getText();
             var id = entry.findElement(By.cssSelector("input[type='checkbox']")).getAttribute("value");
-            contactList.add(new ContactData().withId(id).withName(firstName, lastName));
+            contactList.add(new ContactData().withId(id).withFullName(firstName, lastName));
         }
         return contactList;
     }

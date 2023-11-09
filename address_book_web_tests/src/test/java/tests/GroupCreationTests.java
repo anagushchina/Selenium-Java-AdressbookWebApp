@@ -22,18 +22,19 @@ import java.util.stream.Stream;
 
 public class GroupCreationTests extends TestBase{
 
-    //get list of groups from UI (getting attribute 'text' from elements)
+    //get list of groups from DB using Hibernate library
     @ParameterizedTest
-    @MethodSource("groupsProvider")
-    public void createMultipleGroupsTest(GroupData group) {
-        List<GroupData> oldGroups = appMan.initGroupHelper().getList();
+    @MethodSource("singleRandomGroup")
+    public void createGroupsHbmTest(GroupData group) {
+        List<GroupData> oldGroups = appMan.initHbm().getGroupList();
         appMan.initGroupHelper().createGroup(group);
-        List<GroupData> newGroups = appMan.initGroupHelper().getList();
+        List<GroupData> newGroups = appMan.initHbm().getGroupList();
         Comparator<GroupData> compareById = (o1, o2) ->
         {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
         newGroups.sort(compareById);
+        var maxId = newGroups.get(newGroups.size()-1).id();
         var expectedGroups = new ArrayList<>(oldGroups);
-        expectedGroups.add(group.withId(newGroups.get(newGroups.size()-1).id()).withHeader("").withFooter(""));
+        expectedGroups.add(group.withId(maxId));
         expectedGroups.sort(compareById);
         Assertions.assertEquals(expectedGroups, newGroups);
     }
@@ -55,23 +56,6 @@ public class GroupCreationTests extends TestBase{
         Assertions.assertEquals(expectedGroups, newGroups);
     }
 
-    //get list of groups from DB using Hibernate library
-    @ParameterizedTest
-    @MethodSource("singleRandomGroup")
-    public void createGroupsHbmTest(GroupData group) {
-        List<GroupData> oldGroups = appMan.initHbm().getGroupList();
-        appMan.initGroupHelper().createGroup(group);
-        List<GroupData> newGroups = appMan.initHbm().getGroupList();
-        Comparator<GroupData> compareById = (o1, o2) ->
-        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
-        newGroups.sort(compareById);
-        var maxId = newGroups.get(newGroups.size()-1).id();
-        var expectedGroups = new ArrayList<>(oldGroups);
-        expectedGroups.add(group.withId(maxId));
-        expectedGroups.sort(compareById);
-        Assertions.assertEquals(expectedGroups, newGroups);
-    }
-
     public static Stream<GroupData> singleRandomGroup() {
         Supplier<GroupData> randomGroup = () -> new GroupData().withName(Utils.randomString(6))
                 .withHeader(Utils.randomString(5))
@@ -80,14 +64,20 @@ public class GroupCreationTests extends TestBase{
     }
 
 
-
+    //get list of groups from UI (getting attribute 'text' from elements)
     @ParameterizedTest
-    @MethodSource("negativeGroupsProvider")
-    public void cannotCreateGroupTest(GroupData group) {
+    @MethodSource("groupsProvider")
+    public void createMultipleGroupsTest(GroupData group) {
         List<GroupData> oldGroups = appMan.initGroupHelper().getList();
         appMan.initGroupHelper().createGroup(group);
         List<GroupData> newGroups = appMan.initGroupHelper().getList();
-        Assertions.assertEquals(newGroups, oldGroups);
+        Comparator<GroupData> compareById = (o1, o2) ->
+        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
+        newGroups.sort(compareById);
+        var expectedGroups = new ArrayList<>(oldGroups);
+        expectedGroups.add(group.withId(newGroups.get(newGroups.size()-1).id()).withHeader("").withFooter(""));
+        expectedGroups.sort(compareById);
+        Assertions.assertEquals(expectedGroups, newGroups);
     }
 
     public static List<GroupData> groupsProvider() throws IOException {
@@ -117,7 +107,6 @@ public class GroupCreationTests extends TestBase{
                 line = bReader.readLine();
             }
         }
-
 //        Analyzes data and converts strings into objects of specified type:
         ObjectMapper objectMapper = new ObjectMapper();
         var value = objectMapper.readValue(data, new TypeReference<List<GroupData>>() {
@@ -126,12 +115,20 @@ public class GroupCreationTests extends TestBase{
         return result;
     }
 
+
+    @ParameterizedTest
+    @MethodSource("negativeGroupsProvider")
+    public void cannotCreateGroupTest(GroupData group) {
+        List<GroupData> oldGroups = appMan.initGroupHelper().getList();
+        appMan.initGroupHelper().createGroup(group);
+        List<GroupData> newGroups = appMan.initGroupHelper().getList();
+        Assertions.assertEquals(newGroups, oldGroups);
+    }
+
     public static List<GroupData> negativeGroupsProvider() {
         return new ArrayList<>(List.of(
                 new GroupData("", "name'", "","")));
     }
-
-
 
 
 
@@ -153,7 +150,6 @@ public class GroupCreationTests extends TestBase{
 
 
 
-
     @Test
     public void createGroupTest() {
         int groupCount = appMan.initGroupHelper().getCount();
@@ -171,8 +167,6 @@ public class GroupCreationTests extends TestBase{
     public void createGroupWithNameOnlyTest() {
         appMan.initGroupHelper().createGroup(new GroupData().withName("name only"));
     }
-
-
 
 
 }
