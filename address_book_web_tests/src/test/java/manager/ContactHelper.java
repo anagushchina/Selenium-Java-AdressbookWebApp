@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactHelper extends HelperBase{
+public class ContactHelper extends HelperBase {
     public ContactHelper(ApplicationManager manager) {
         super(manager);
     }
@@ -24,12 +24,12 @@ public class ContactHelper extends HelperBase{
     public void createContact(ContactData contact, GroupData group) {
         initContactCreation();
         fillContactForm(contact);
-        selectGroup(group);
+        selectGroupWhenCreatingContact(group);
         submitContactCreation();
         returnToHomePage();
     }
 
-    private void selectGroup(GroupData group) {
+    private void selectGroupWhenCreatingContact(GroupData group) {
         new Select(manager.driver.findElement(By.name("new_group"))).selectByValue(group.id());
     }
 
@@ -48,12 +48,12 @@ public class ContactHelper extends HelperBase{
         manager.driver.switchTo().alert().accept();
     }
 
-    public boolean isContactPresent(){
+    public boolean isContactPresent() {
         return manager.isElementPresent(By.name("selected[]"));
     }
 
     private void returnToHomePage() {
-        click(By.xpath("//a[text()='home page']"));
+        click(By.xpath("//a[text()='home']"));
     }
 
     private void submitContactCreation() {
@@ -72,10 +72,10 @@ public class ContactHelper extends HelperBase{
         type(By.name("email"), contact.email());
         type(By.name("email2"), contact.email2());
         type(By.name("email3"), contact.email3());
-        if(!(contact.photo() =="")){
-            attach(By.name("photo"), contact.photo());}
+        if (!(contact.photo() == "")) {
+            attach(By.name("photo"), contact.photo());
+        }
     }
-
 
 
     private void initContactCreation() {
@@ -102,7 +102,7 @@ public class ContactHelper extends HelperBase{
 
     public void deleteAllContacts() {
         var checkboxes = manager.driver.findElements(By.name("selected[]"));
-        for(var checkbox: checkboxes){
+        for (var checkbox : checkboxes) {
             checkbox.click();
         }
         deleteSelectedContacts();
@@ -113,7 +113,7 @@ public class ContactHelper extends HelperBase{
     public List<ContactData> getList() {
         var contactList = new ArrayList<ContactData>();
         var entries = manager.driver.findElements(By.cssSelector("tr[name='entry']"));
-        for(var entry: entries){
+        for (var entry : entries) {
             var lastName = entry.findElement(By.xpath(".//td[2]")).getText();
             var firstName = entry.findElement(By.xpath(".//td[3]")).getText();
             var id = entry.findElement(By.cssSelector("input[type='checkbox']")).getAttribute("value");
@@ -139,4 +139,37 @@ public class ContactHelper extends HelperBase{
         contactEntry.findElement(By.xpath(".//img[@title='Edit']")).click();
 
     }
+
+    public void addContactToGroup(ContactData contact, GroupData group) {
+        selectContact(contact);
+        selectGroupToMoveContact(group);
+        addToSelectedGroup();
+        returnToHomePage();
+    }
+
+    private void addToSelectedGroup() {
+        manager.driver.findElement(By.name("add")).click();
+    }
+
+    private void selectGroupToMoveContact(GroupData group) {
+        new Select(manager.driver.findElement(By.name("to_group"))).selectByValue(group.id());
+    }
+
+    private void selectGroupToViewContacts(GroupData group) {
+        new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
+    }
+
+    public void removeContactFromGroup(ContactData contact, GroupData group) {
+        selectGroupToViewContacts(group);
+        selectContact(contact);
+        removeContact();
+        manager.driver.findElement(By.cssSelector("div.msgbox"));
+        returnToHomePage();
+    }
+
+    private void removeContact() {
+        manager.driver.findElement(By.name("remove")).click();
+    }
+
+
 }
