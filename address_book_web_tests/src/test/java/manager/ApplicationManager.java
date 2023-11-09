@@ -14,6 +14,8 @@ public class ApplicationManager {
     private LoginHelper loginHelper;
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
+    private JdbcHelper jdbcHelper;
+    private HibernateHelper hbm;
 
     private Properties properties;
 
@@ -53,6 +55,20 @@ public class ApplicationManager {
             contactHelper = new ContactHelper(this);
         }
         return contactHelper;
+    }
+
+    public JdbcHelper initJdbcHelper() {
+        if (jdbcHelper == null){
+            jdbcHelper = new JdbcHelper(this);
+        }
+        return jdbcHelper;
+    }
+
+    public HibernateHelper initHbm() {
+        if (hbm == null){
+            hbm = new HibernateHelper(this);
+        }
+        return hbm;
     }
 
 

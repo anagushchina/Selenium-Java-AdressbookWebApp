@@ -20,6 +20,11 @@ public record Square(double side) {
         System.out.println(text);
     }
 
+    public static void printPerimeter(Square square) {
+        String text = String.format("Perimeter of square with the side %f is equal %f", square.side, square.calculatePerimeter());
+        System.out.println(text);
+    }
+
 //    public static double calculateArea(double side) {
 //        return side * side;
 //    }

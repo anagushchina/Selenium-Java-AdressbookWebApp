@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class GroupRemovalTests extends TestBase{
 
+//    all actions via UI
     @Test
     public void removeGroupTest() {
         if(appMan.initGroupHelper().getCount() == 0){
@@ -24,13 +25,28 @@ public class GroupRemovalTests extends TestBase{
         Assertions.assertEquals(expectedGroups, newGroups);
     }
 
+//    creation of group and getting list of groups from DB, using Hibernate library
+    @Test
+    public void removeGroupHbmTest() {
+        if(appMan.initHbm().getGroupCount() == 0){
+            appMan.initHbm().createGroup(new GroupData());
+        }
+        List<GroupData> oldGroups = appMan.initHbm().getGroupList();
+        var index = new Random().nextInt(oldGroups.size());
+        appMan.initGroupHelper().removeGroup(oldGroups.get(index));
+        List<GroupData> newGroups = appMan.initHbm().getGroupList();
+        var expectedGroups = new ArrayList<>(oldGroups);
+        expectedGroups.remove(index);
+        Assertions.assertEquals(expectedGroups, newGroups);
+    }
+
     @Test
     public void removeAllGroupsAtOnce(){
-        if(appMan.initGroupHelper().getCount() == 0){
-            appMan.initGroupHelper().createGroup(new GroupData());
+        if(appMan.initHbm().getGroupCount() == 0){
+            appMan.initHbm().createGroup(new GroupData());
         }
         appMan.initGroupHelper().removeAllGroups();
-        Assertions.assertEquals(0, appMan.initGroupHelper().getCount());
+        Assertions.assertEquals(0, appMan.initHbm().getGroupCount());
     }
 
 }

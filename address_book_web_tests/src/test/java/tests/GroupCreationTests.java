@@ -16,10 +16,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 
 public class GroupCreationTests extends TestBase{
 
+    //get list of groups from UI (getting attribute 'text' from elements)
     @ParameterizedTest
     @MethodSource("groupsProvider")
     public void createMultipleGroupsTest(GroupData group) {
@@ -34,6 +37,49 @@ public class GroupCreationTests extends TestBase{
         expectedGroups.sort(compareById);
         Assertions.assertEquals(expectedGroups, newGroups);
     }
+
+    //get list of groups from DB using jdbc library and SQL
+    @ParameterizedTest
+    @MethodSource("singleRandomGroup")
+    public void createGroupsJdbcTest(GroupData group) {
+        List<GroupData> oldGroups = appMan.initJdbcHelper().getGroupList();
+        appMan.initGroupHelper().createGroup(group);
+        List<GroupData> newGroups = appMan.initJdbcHelper().getGroupList();
+        Comparator<GroupData> compareById = (o1, o2) ->
+        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
+        newGroups.sort(compareById);
+        var maxId = newGroups.get(newGroups.size()-1).id();
+        var expectedGroups = new ArrayList<>(oldGroups);
+        expectedGroups.add(group.withId(maxId));
+        expectedGroups.sort(compareById);
+        Assertions.assertEquals(expectedGroups, newGroups);
+    }
+
+    //get list of groups from DB using Hibernate library
+    @ParameterizedTest
+    @MethodSource("singleRandomGroup")
+    public void createGroupsHbmTest(GroupData group) {
+        List<GroupData> oldGroups = appMan.initHbm().getGroupList();
+        appMan.initGroupHelper().createGroup(group);
+        List<GroupData> newGroups = appMan.initHbm().getGroupList();
+        Comparator<GroupData> compareById = (o1, o2) ->
+        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
+        newGroups.sort(compareById);
+        var maxId = newGroups.get(newGroups.size()-1).id();
+        var expectedGroups = new ArrayList<>(oldGroups);
+        expectedGroups.add(group.withId(maxId));
+        expectedGroups.sort(compareById);
+        Assertions.assertEquals(expectedGroups, newGroups);
+    }
+
+    public static Stream<GroupData> singleRandomGroup() {
+        Supplier<GroupData> randomGroup = () -> new GroupData().withName(Utils.randomString(6))
+                .withHeader(Utils.randomString(5))
+                .withFooter(Utils.randomString(8));
+        return Stream.generate(randomGroup).limit(3);
+    }
+
+
 
     @ParameterizedTest
     @MethodSource("negativeGroupsProvider")

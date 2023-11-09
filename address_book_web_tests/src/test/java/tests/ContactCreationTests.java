@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import common.Utils;
 import model.ContactData;
+import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -70,6 +71,34 @@ public class ContactCreationTests extends TestBase{
                 .withFirstName(Utils.randomString(5))
                 .withPhoto(Utils.randomFile("src/test/resources/images"));
         appMan.initContactHelper().createContact(contact);
+    }
+
+    @Test
+    public void createContactTest() {
+        ContactData contact = new ContactData()
+                .withFirstName(Utils.randomString(5))
+                .withLastName(Utils.randomString(7))
+                .withAddress(Utils.randomString(15))
+                .withPhoto(Utils.randomFile("src/test/resources/images"));
+        appMan.initContactHelper().createContact(contact);
+    }
+
+    @Test
+    public void createContactInGroupTest() {
+        ContactData contact = new ContactData()
+                .withFirstName(Utils.randomString(5))
+                .withLastName(Utils.randomString(7))
+                .withAddress(Utils.randomString(15))
+                .withPhoto(Utils.randomFile("src/test/resources/images"));
+        if(appMan.initHbm().getGroupCount() == 0){
+            appMan.initHbm().createGroup(new GroupData("", Utils.randomString(5), Utils.randomString(5), Utils.randomString(5)));
+        }
+        var group = appMan.initHbm().getGroupList().get(0);
+        var oldContactsInGroup = appMan.initHbm().getContactsInGroup(group);
+        appMan.initContactHelper().createContact(contact, group);
+        var newContactsInGroup = appMan.initHbm().getContactsInGroup(group);
+        Assertions.assertEquals(oldContactsInGroup.size()+1, newContactsInGroup.size());
+
     }
 
 
