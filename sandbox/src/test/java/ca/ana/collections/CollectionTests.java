@@ -4,14 +4,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CollectionTests {
 
     @Test
-    void arrayTest(){
+    void arrayTest() {
         var array = new String[]{"a", "b", "c"};
-        array[0]="d";
+        array[0] = "d";
         Assertions.assertEquals(array[0], "d");
 
         //create empty array with specified length
@@ -20,7 +22,7 @@ public class CollectionTests {
     }
 
     @Test
-    void listTest(){
+    void listTest() {
         var list = new ArrayList<String>();
         Assertions.assertEquals(list.size(), 0);
         list.add("a");
@@ -34,8 +36,20 @@ public class CollectionTests {
         var listWithElements = new ArrayList<>(List.of("a", "b", "c"));
         listWithElements.add("d");
         Assertions.assertEquals(listWithElements.size(), 4);
+    }
 
+    @Test
+    void setTest() {
+        var set = Set.of("a", "b", "c");
+        Assertions.assertEquals(3, set.size());
+        var setFromList = Set.copyOf(List.of("a", "b", "c"));
+        Assertions.assertEquals(3, setFromList.size());
+//        get some element from set, but not specific one
+        var element = set.stream().findAny().get();
 
+        var modifiedSet = new HashSet<>(List.of("a", "b", "c"));
+        modifiedSet.add("d");
+        Assertions.assertEquals(4, modifiedSet.size());
 
     }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GroupHelper extends HelperBase{
 
@@ -104,14 +105,22 @@ public class GroupHelper extends HelperBase{
 
     public List<GroupData> getList() {
         openGroupsPage();
-        var groupList = new ArrayList<GroupData>();
+//        var groupList = new ArrayList<GroupData>();
         var spans = manager.driver.findElements(By.cssSelector("span.group"));
-        for(var span: spans){
+        return spans.stream().map(span -> {
             var name = span.getText();
             var checkbox = span.findElement(By.name("selected[]"));
             var id = checkbox.getAttribute("value");
-            groupList.add(new GroupData().withId(id).withName(name));
-        }
-        return groupList;
+            return new GroupData().withId(id).withName(name);
+        })
+                .collect(Collectors.toList());
+
+//        for(var span: spans){
+//            var name = span.getText();
+//            var checkbox = span.findElement(By.name("selected[]"));
+//            var id = checkbox.getAttribute("value");
+//            groupList.add(new GroupData().withId(id).withName(name));
+//        }
+//        return groupList;
     }
 }

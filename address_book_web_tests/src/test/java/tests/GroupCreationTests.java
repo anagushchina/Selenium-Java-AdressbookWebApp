@@ -2,7 +2,6 @@ package tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import common.Utils;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
@@ -16,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -24,24 +24,21 @@ public class GroupCreationTests extends TestBase{
 
     //get list of groups from DB using Hibernate library
     @ParameterizedTest
-    @MethodSource("singleRandomGroup")
+    @MethodSource("randomGroups")
     public void createGroupsHbmTest(GroupData group) {
         List<GroupData> oldGroups = appMan.initHbm().getGroupList();
         appMan.initGroupHelper().createGroup(group);
         List<GroupData> newGroups = appMan.initHbm().getGroupList();
-        Comparator<GroupData> compareById = (o1, o2) ->
-        {return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));};
-        newGroups.sort(compareById);
-        var maxId = newGroups.get(newGroups.size()-1).id();
+        var extraGroups = newGroups.stream().filter(g -> !oldGroups.contains(g)).toList();
+        var newId = extraGroups.get(0).id();
         var expectedGroups = new ArrayList<>(oldGroups);
-        expectedGroups.add(group.withId(maxId));
-        expectedGroups.sort(compareById);
-        Assertions.assertEquals(expectedGroups, newGroups);
+        expectedGroups.add(group.withId(newId));
+        Assertions.assertEquals(Set.copyOf(expectedGroups), Set.copyOf(newGroups));
     }
 
     //get list of groups from DB using jdbc library and SQL
     @ParameterizedTest
-    @MethodSource("singleRandomGroup")
+    @MethodSource("randomGroups")
     public void createGroupsJdbcTest(GroupData group) {
         List<GroupData> oldGroups = appMan.initJdbcHelper().getGroupList();
         appMan.initGroupHelper().createGroup(group);
@@ -56,8 +53,9 @@ public class GroupCreationTests extends TestBase{
         Assertions.assertEquals(expectedGroups, newGroups);
     }
 
-    public static Stream<GroupData> singleRandomGroup() {
-        Supplier<GroupData> randomGroup = () -> new GroupData().withName(Utils.randomString(6))
+    public static Stream<GroupData> randomGroups() {
+        Supplier<GroupData> randomGroup = () -> new GroupData()
+                .withName(Utils.randomString(6))
                 .withHeader(Utils.randomString(5))
                 .withFooter(Utils.randomString(8));
         return Stream.generate(randomGroup).limit(3);

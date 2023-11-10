@@ -14,6 +14,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Generator {
     @Parameter(names = {"--type", "-t"})
@@ -53,29 +56,24 @@ public class Generator {
         }
     }
 
-    private Object generateGroups() {
-        var result = new ArrayList<GroupData>();
-        for (int i = 1; i <= count; i++) {
-            result.add(new GroupData()
-                    .withName(Utils.randomString(i * 10))
-                    .withHeader(Utils.randomString(i * 5))
-                    .withFooter(Utils.randomString(i * 4)));
-        }
-        return result;
+    private Object generateData (Supplier<Object> dataSupplier){
+        return Stream.generate(dataSupplier).limit(count).collect(Collectors.toList());
     }
 
-    private Object generateContacts() {
-        var result = new ArrayList<ContactData>();
-        for(int i=1; i<=count; i++ ){
-            result.add(new ContactData().withMinSetOfData(
-                    Utils.randomString(i*3),
-                    Utils.randomString(i*3),
-                    Utils.randomString(i*10),
-                    Utils.randomNumber(10),
-                    Utils.randomString(i*5)));
+    private Object generateGroups() {
+        return generateData(()->
+                new GroupData()
+                .withName(Utils.randomString(10))
+                .withHeader(Utils.randomString(5))
+                .withFooter(Utils.randomString(4)));
         }
-        return result;
+
+    private Object generateContacts() {
+        return generateData(()-> new ContactData()
+                    .withFirstName(Utils.randomString(3))
+                    .withLastName(Utils.randomString(3)));
     }
+
 
     private void save(Object data) throws IOException {
         if (format.equals("json")) {

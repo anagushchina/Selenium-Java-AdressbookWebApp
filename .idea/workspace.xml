@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 15">
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 15, corrections">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/MoveContactToGroupTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/MoveContactToGroupTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/common/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/common/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/generator/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/HibernateHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/HibernateHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/GroupModificationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/collections/CollectionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/collections/CollectionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,8 +103,24 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MoveContactToGroupTests.moveContactToGroupHbmTest">
-    <configuration name="ContactModificationTest.modifyContactHbmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GroupCreationTests.createGroupsHbmTest">
+    <configuration name="CollectionTests.setTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.ana.collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.ana.collections" />
+      <option name="MAIN_CLASS_NAME" value="ca.ana.collections.CollectionTests" />
+      <option name="METHOD_NAME" value="setTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupCreationTests.createGroupsHbmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="address_book_web_tests.test" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +129,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactModificationTest" />
-      <option name="METHOD_NAME" value="modifyContactHbmTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.GroupCreationTests" />
+      <option name="METHOD_NAME" value="createGroupsHbmTest(model.GroupData)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,22 +184,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveContactFromGroupTests.moveContactToGroupHbmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RemoveContactFromGroupTests" />
-      <option name="METHOD_NAME" value="moveContactToGroupHbmTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="sandbox" />
       <method v="2">
@@ -193,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GroupCreationTests.createGroupsHbmTest" />
+        <item itemvalue="JUnit.GroupModificationTests.modifyGroupHbmTest" />
+        <item itemvalue="JUnit.CollectionTests.setTest" />
         <item itemvalue="JUnit.MoveContactToGroupTests.moveContactToGroupHbmTest" />
         <item itemvalue="JUnit.RemoveContactFromGroupTests.RemoveContactFromGroupHbmTest" />
-        <item itemvalue="JUnit.RemoveContactFromGroupTests.moveContactToGroupHbmTest" />
-        <item itemvalue="JUnit.ContactModificationTest.modifyContactHbmTest" />
-        <item itemvalue="JUnit.GroupModificationTests.modifyGroupHbmTest" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699570745364</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Assignment 15, corrections">
+      <option name="closed" value="true" />
+      <created>1699635928717</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699635928717</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -331,6 +345,7 @@
     <MESSAGE value="Lessons 6.1, 6.2, 6.3, 6.4" />
     <MESSAGE value="Lessons 6.5; Assignment 14" />
     <MESSAGE value="Assignment 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assignment 15" />
+    <MESSAGE value="Assignment 15, corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment 15, corrections" />
   </component>
 </project>

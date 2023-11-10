@@ -1,13 +1,11 @@
 package tests;
 
+import common.Utils;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GroupModificationTests extends TestBase {
 
@@ -20,17 +18,12 @@ public class GroupModificationTests extends TestBase {
         List<GroupData> oldGroups = appMan.initHbm().getGroupList();
         var index = new Random().nextInt(oldGroups.size());
         var modifyingGroup = oldGroups.get(index);
-        var modifiedGroup = new GroupData().withName("modified name");
+        var modifiedGroup = new GroupData().withName("modified" + Utils.randomString(5));
         appMan.initGroupHelper().modifyGroup(modifyingGroup, modifiedGroup);
         List<GroupData> newGroups = appMan.initHbm().getGroupList();
         var expectedGroups = new ArrayList<>(oldGroups);
         expectedGroups.set(index, modifiedGroup.withId(modifyingGroup.id()));
-        Comparator<GroupData> compareById = (o1, o2) -> {
-            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
-        };
-        newGroups.sort(compareById);
-        expectedGroups.sort(compareById);
-        Assertions.assertEquals(expectedGroups, newGroups);
+        Assertions.assertEquals(Set.copyOf(expectedGroups), Set.copyOf(newGroups));
     }
 
 
