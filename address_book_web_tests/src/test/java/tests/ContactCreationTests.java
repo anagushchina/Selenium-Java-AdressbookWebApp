@@ -46,7 +46,19 @@ public class ContactCreationTests extends TestBase {
                 .withCompany(Utils.randomString(5).toUpperCase())
                 .withAddress(Utils.randomString(15))
                 .withMobilePhone(Utils.randomNumber(10))
-                .withEmail(Utils.randomString(5) + "@domain.do"));
+                .withWorkPhone(Utils.randomNumber(10))
+                .withEmail(Utils.randomString(5) + "@domain.do")
+                .withEmail3(Utils.randomString(5) + "@domain.do"));
+        result.add(new ContactData()
+                .withFirstName(Utils.randomString(5))
+                .withLastName(Utils.randomString(7))
+                .withAddress(Utils.randomString(15))
+                .withHomePhone(Utils.randomNumber(10))
+                .withMobilePhone(Utils.randomNumber(10))
+                .withWorkPhone(Utils.randomNumber(10))
+                .withEmail(Utils.randomString(5) + "@domain.do")
+                .withEmail2(Utils.randomString(7) + "@domain.do")
+                .withEmail3(Utils.randomString(9) + "@domain.do"));
         result.add(new ContactData()
                 .withFirstName(Utils.randomString(5))
                 .withLastName(Utils.randomString(7))

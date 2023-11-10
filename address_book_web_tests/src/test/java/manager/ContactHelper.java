@@ -7,7 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ContactHelper extends HelperBase {
     public ContactHelper(ApplicationManager manager) {
@@ -172,4 +176,62 @@ public class ContactHelper extends HelperBase {
     }
 
 
+    public String getPhonesOnMainPage(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../..//td[6]", contact.id()))).getText();
+    }
+
+    public Map<String, String> getPhonesOnMainPage() {
+        var result = new HashMap<String, String>();
+        List<WebElement> rows = manager.driver.findElements(By.name("entry"));
+        for (WebElement row : rows) {
+            var id = row.findElement(By.tagName("input")).getAttribute("id");
+            var phones = row.findElements(By.tagName("td")).get(5).getText();
+            result.put(id, phones);
+        }
+        return result;
+    }
+
+    public void openEditContactForm(ContactData contact) {
+        manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../..//td[8]", contact.id()))).click();
+    }
+
+    public String getPhonesOnEditPage() {
+        var home = manager.driver.findElement(By.name("home")).getAttribute("value");
+        var mobile = manager.driver.findElement(By.name("mobile")).getAttribute("value");
+        var work = manager.driver.findElement(By.name("work")).getAttribute("value");
+        var secondaryHome = manager.driver.findElement(By.name("phone2")).getAttribute("value");
+
+        var phones = Stream.of(home, mobile, work, secondaryHome)
+                .filter(phone -> phone != null && !phone.equals(""))
+                .collect(Collectors.joining("\n"));
+        System.out.println(phones);
+        return phones;
+    }
+
+    public String getAddressOnMainPage(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../..//td[4]", contact.id()))).getText();
+    }
+
+    public String getAddressOnEditPage() {
+       return manager.driver.findElement(By.name("address")).getText();
+    }
+
+    public String getEmailsOnMainPage(ContactData contact) {
+        return manager.driver.findElement(By.xpath(
+                String.format("//input[@id='%s']/../..//td[5]", contact.id()))).getText();
+    }
+
+    public String getEmailsOnEditPage() {
+        var email = manager.driver.findElement(By.name("email")).getAttribute("value");
+        var email2 = manager.driver.findElement(By.name("email2")).getAttribute("value");
+        var email3 = manager.driver.findElement(By.name("email3")).getAttribute("value");
+        var emails = Stream.of(email, email2, email3)
+                .filter(phone -> phone != null && !phone.equals(""))
+                .collect(Collectors.joining("\n"));
+        System.out.println(emails);
+        return emails;
+    }
 }

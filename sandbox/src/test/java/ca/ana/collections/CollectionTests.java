@@ -3,10 +3,7 @@ package ca.ana.collections;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionTests {
 
@@ -50,6 +47,17 @@ public class CollectionTests {
         var modifiedSet = new HashSet<>(List.of("a", "b", "c"));
         modifiedSet.add("d");
         Assertions.assertEquals(4, modifiedSet.size());
+    }
+
+    @Test
+    void mapTest(){
+        var map = new HashMap<Character, String>();
+        map.put('1', "one");
+        map.put('2', "two");
+        map.put('3', "three");
+        Assertions.assertEquals("one", map.get('1'));
+        map.put('1', "uno");
+        Assertions.assertEquals("uno", map.get('1'));
 
     }
 
