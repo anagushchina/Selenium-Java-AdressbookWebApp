@@ -35,7 +35,7 @@ public class MoveContactToGroupTests extends TestBase{
         };
         newContactsInGroup.sort(compareById);
         var expectedContacts = new ArrayList<>(oldContactsInGroup);
-        expectedContacts.add(contact.withId(newContactsInGroup.get(newContactsInGroup.size() - 1).id()));
+        expectedContacts.add(contact);
         expectedContacts.sort(compareById);
         Assertions.assertEquals(expectedContacts, newContactsInGroup);
     }
