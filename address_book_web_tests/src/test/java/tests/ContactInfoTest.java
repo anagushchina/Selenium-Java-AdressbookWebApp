@@ -12,57 +12,37 @@ import java.util.stream.Stream;
 public class ContactInfoTest extends TestBase {
 
     @Test
-    public void checkPhonesOfSingleContactTest() {
+    public void checkInfoOfSingleContactTest() {
         if (appMan.initHbm().getContactCount() == 0) {
             appMan.initHbm().createContact(new ContactData()
+                    .withFirstName(Utils.randomString(5))
+                    .withLastName(Utils.randomString(10))
+                    .withAddress(Utils.randomString(6))
                     .withHomePhone(Utils.randomNumber(10))
                     .withMobilePhone(Utils.randomNumber(10))
                     .withWorkPhone(Utils.randomNumber(10))
-                    .withSecondaryPhone(Utils.randomNumber(10)));
+                    .withSecondaryPhone(Utils.randomNumber(10))
+                    .withEmail(Utils.randomString(6) + "@mail.ca")
+                    .withEmail2(Utils.randomString(6) + "@mail.ca"));
             appMan.refreshPage();
         }
         var contacts = appMan.initHbm().getContactsList();
         var contact = contacts.get(0);
+
         var phonesOnMainPage = appMan.initContactHelper().getPhonesOnMainPage(contact);
-        appMan.initContactHelper().openEditContactForm(contact);
-        var phonesOnEditPage = appMan.initContactHelper().getPhonesOnEditPage();
-        Assertions.assertEquals(phonesOnMainPage, phonesOnEditPage);
-    }
-
-    @Test
-    public void checkAddressOfSingleContactTest() {
-        if (appMan.initHbm().getContactCount() == 0) {
-            appMan.initHbm().createContact(new ContactData()
-                    .withFirstName(Utils.randomString(5))
-                    .withLastName(Utils.randomString(10))
-                    .withAddress(Utils.randomString(6)));
-            appMan.refreshPage();
-        }
-        var contacts = appMan.initHbm().getContactsList();
-        var contact = contacts.get(0);
         var addressOnMainPage = appMan.initContactHelper().getAddressOnMainPage(contact);
-        appMan.initContactHelper().openEditContactForm(contact);
-        var addressOnEditPage = appMan.initContactHelper().getAddressOnEditPage();
-        Assertions.assertEquals(addressOnMainPage, addressOnEditPage);
-    }
-
-    @Test
-    public void checkEmailsOfSingleContactTest() {
-        if (appMan.initHbm().getContactCount() == 0) {
-            appMan.initHbm().createContact(new ContactData()
-                    .withFirstName(Utils.randomString(5))
-                    .withLastName(Utils.randomString(10))
-                    .withEmail(Utils.randomString(6)+"@mail.ca"));
-            appMan.refreshPage();
-        }
-        var contacts = appMan.initHbm().getContactsList();
-        var contact = contacts.get(0);
         var emailsOnMainPage = appMan.initContactHelper().getEmailsOnMainPage(contact);
+
         appMan.initContactHelper().openEditContactForm(contact);
+
+        var phonesOnEditPage = appMan.initContactHelper().getPhonesOnEditPage();
+        var addressOnEditPage = appMan.initContactHelper().getAddressOnEditPage();
         var emailsOnEditPage = appMan.initContactHelper().getEmailsOnEditPage();
+
+        Assertions.assertEquals(phonesOnMainPage, phonesOnEditPage);
+        Assertions.assertEquals(addressOnMainPage, addressOnEditPage);
         Assertions.assertEquals(emailsOnMainPage, emailsOnEditPage);
     }
-
 
     @Test
     public void checkPhonesOfSingleContactWithDBTest() {

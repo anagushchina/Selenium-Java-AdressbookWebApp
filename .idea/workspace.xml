@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 7.1, 7.2, 7.3, 7.4">
-      <change afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactInfoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/ReverseChecks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/ContactHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/HibernateHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/HibernateHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/hbm/ContactRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/manager/hbm/ContactRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/model/ContactData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/collections/CollectionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/sandbox/src/test/java/ca/ana/collections/CollectionTests.java" afterDir="false" />
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 7.5, 7.6; Assignment 16">
+      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactInfoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +96,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContactCreationTests.createMultipleContactsHbmTest">
+  <component name="RunManager" selected="JUnit.ContactInfoTest.checkInfoOfSingleContactTest">
     <configuration name="ContactCreationTests.createMultipleContactsHbmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="address_book_web_tests.test" />
       <extension name="coverage">
@@ -121,22 +113,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactCreationTests.createMultipleContactsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactCreationTests" />
-      <option name="METHOD_NAME" value="createMultipleContactsTest(model.ContactData)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ContactInfoTest.checkEmailsOfSingleContactTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="address_book_web_tests.test" />
       <extension name="coverage">
@@ -148,6 +124,22 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
       <option name="METHOD_NAME" value="checkEmailsOfSingleContactTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactInfoTest.checkInfoOfSingleContactTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="address_book_web_tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
+      <option name="METHOD_NAME" value="checkInfoOfSingleContactTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContactInfoTest.checkInfoOfSingleContactTest" />
         <item itemvalue="JUnit.ContactCreationTests.createMultipleContactsHbmTest" />
         <item itemvalue="JUnit.ContactInfoTest.checkPhonesOfSingleContactTest" />
         <item itemvalue="JUnit.ContactInfoTest.checkPhonesOfSingleContactWithDBTest" />
         <item itemvalue="JUnit.ContactInfoTest.checkEmailsOfSingleContactTest" />
-        <item itemvalue="JUnit.ContactCreationTests.createMultipleContactsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699648617901</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Lessons 7.5, 7.6; Assignment 16">
+      <option name="closed" value="true" />
+      <created>1699660021931</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699660021931</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -356,6 +356,7 @@
     <MESSAGE value="Assignment 15" />
     <MESSAGE value="Assignment 15, corrections" />
     <MESSAGE value="Lessons 7.1, 7.2, 7.3, 7.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lessons 7.1, 7.2, 7.3, 7.4" />
+    <MESSAGE value="Lessons 7.5, 7.6; Assignment 16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lessons 7.5, 7.6; Assignment 16" />
   </component>
 </project>
