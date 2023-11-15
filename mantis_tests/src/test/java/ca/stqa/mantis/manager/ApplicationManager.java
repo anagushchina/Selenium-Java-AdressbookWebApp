@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.net.DatagramSocket;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -14,7 +13,7 @@ public class ApplicationManager {
     private WebDriver driver;
     private String browser;
     private Properties properties;
-    private SessionHelper sessionHelper;
+    private WebSessionHelper webSessionHelper;
     private HttpSessionHelper httpSessionHelper;
     private JamesCliHelper jamesCliHelper;
     private MailHelper mailHelper;
@@ -43,11 +42,11 @@ public class ApplicationManager {
         return driver;
     }
 
-    public SessionHelper session(){
-        if(sessionHelper == null) {
-            sessionHelper = new SessionHelper(this);
+    public WebSessionHelper web(){
+        if(webSessionHelper == null) {
+            webSessionHelper = new WebSessionHelper(this);
         }
-        return sessionHelper;
+        return webSessionHelper;
     }
 
     public HttpSessionHelper http(){

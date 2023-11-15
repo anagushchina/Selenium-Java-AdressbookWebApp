@@ -1,9 +1,11 @@
 package ca.stqa.mantis.common;
 
-import java.io.File;
-import java.nio.file.Paths;
+import ca.stqa.mantis.model.MailMessage;
+
+import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,19 +21,16 @@ public class Utils {
         return result;
     }
 
-    public static String randomNumber(int n){
-        var rnd = new Random();
-        var result = "";
-        for(int i = 1; i<=n; i++){
-            result = result + rnd.nextInt(9);
-        }
-        return result;
-    }
 
-    public static String randomFile(String directoryPath){
-        var fileNameList = new File(directoryPath).list();
-        var index = new Random().nextInt(fileNameList.length);
-        var filePath = Paths.get(directoryPath, fileNameList[index]).toString();
-        return filePath;
+    public static String extractUrl(List<MailMessage> messages) {
+        var text = messages.get(0).content();
+        var pattern = Pattern.compile("http://\\S*");
+        var matcher = pattern.matcher(text);
+        var url = "";
+        if (matcher.find()) {
+            url = text.substring(matcher.start(), matcher.end());
+            System.out.println(url);
+        }
+        return url;
     }
 }

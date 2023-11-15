@@ -7,8 +7,8 @@ public class LoginTests extends TestBase{
 
     @Test
     public void canLoginViaWebTest(){
-        appMan.session().login("administrator", "root");
-        Assertions.assertTrue(appMan.session().isLoggedIn());
+        appMan.web().login("administrator", "root");
+        Assertions.assertTrue(appMan.web().isLoggedIn());
     }
 
     @Test
