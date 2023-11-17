@@ -2,6 +2,8 @@ package ca.stqa.mantis.tests;
 
 import ca.stqa.mantis.common.Utils;
 import ca.stqa.mantis.model.DeveloperMailUser;
+import ca.stqa.mantis.model.IssueData;
+import ca.stqa.mantis.model.UserData;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,26 @@ import java.util.List;
 
 public class UserCreationTests extends TestBase{
     DeveloperMailUser user;
+
+
+    @Test
+    void canCreateUserViaApi(){
+        var username = Utils.randomString(3);
+        var email = String.format("%s@localhost", username);
+        var password = "password";
+        appMan.jamesApi().addUser(email, password);
+
+        appMan.rest().createUser(username, email);
+
+        var messages = appMan.mail().receive(email, password, Duration.ofSeconds(10));
+        String url = Utils.extractUrl(messages);
+
+        appMan.web().finishSignup(url, password);
+
+        appMan.http().login(username, password);
+        Assertions.assertTrue(appMan.http().isLoggedIn());
+    }
+
 
     @Test
     void canCreateUser() {
