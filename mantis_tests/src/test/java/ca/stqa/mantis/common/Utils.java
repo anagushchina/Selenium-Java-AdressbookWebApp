@@ -33,4 +33,15 @@ public class Utils {
         }
         return url;
     }
+
+    public static String extractUrl(String message) {
+        var pattern = Pattern.compile("http://\\S*");
+        var matcher = pattern.matcher(message);
+        var url = "";
+        if (matcher.find()) {
+            url = message.substring(matcher.start(), matcher.end());
+            System.out.println(url);
+        }
+        return url;
+    }
 }

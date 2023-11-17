@@ -21,7 +21,7 @@ public class WebSessionHelper extends HelperBase{
         type(By.name("username"), username);
         type(By.name("email"), email);
         click(By.xpath("//input[@type='submit']"));
-        click(By.cssSelector("a.btn-success"));
+//        click(By.cssSelector("a.btn-success"));
     }
 
     public void finishSignup(String url, String password){

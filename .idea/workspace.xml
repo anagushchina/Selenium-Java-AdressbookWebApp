@@ -4,8 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Lessons 7.5, 7.6; Assignment 16">
-      <change beforePath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactInfoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/address_book_web_tests/src/test/java/tests/ContactInfoTest.java" afterDir="false" />
+    <list default="true" id="8b831fec-57bb-4e0b-a155-aa26b0adf831" name="Changes" comment="Assignment 18">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_14_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_urlconnection_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_jvm_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__jakarta_mail_jakarta_mail_api_2_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_angus_angus_activation_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_angus_angus_mail_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_6_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_6_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_6_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_6_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/mantis_tests.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/mantis_tests.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/DeveloperMailHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/JamesApiHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/developerMail/AddUserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/developerMail/GetIdsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/developerMail/GetMessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/model/DeveloperMailUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/tests/UserCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/common/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/common/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/ApplicationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/WebSessionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/manager/WebSessionHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +46,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/address_book_web_tests">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/mantis_tests">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/sandbox">
@@ -27,6 +62,9 @@
           <activation />
         </task>
         <task path="$PROJECT_DIR$/address_book_web_tests">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/mantis_tests">
           <activation />
         </task>
         <projects_view>
@@ -57,6 +95,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -87,95 +126,142 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis" />
+      <recent name="$PROJECT_DIR$/mantis_tests" />
       <recent name="$PROJECT_DIR$/address_book_web_tests/src/test/java" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="ca.stqa.mantis.common.Utils" />
+      <recent name="ca.stqa.mantis.manager.HelperBase" />
       <recent name="ApplicationManager" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.stqa.mantis.manager" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContactInfoTest.checkInfoOfSingleContactTest">
-    <configuration name="ContactCreationTests.createMultipleContactsHbmTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactCreationTests" />
-      <option name="METHOD_NAME" value="createMultipleContactsHbmTest(model.ContactData)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.UserCreationTests.canCreateUser">
+    <configuration name="MailTests.canExtractUrl" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mantis_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ca.stqa.mantis.tests.MailTests.canExtractUrl&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
-    <configuration name="ContactInfoTest.checkEmailsOfSingleContactTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
-      <option name="METHOD_NAME" value="checkEmailsOfSingleContactTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="MailTests.canReceiveMail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mantis_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ca.stqa.mantis.tests.MailTests.canReceiveMail&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
-    <configuration name="ContactInfoTest.checkInfoOfSingleContactTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
-      <option name="METHOD_NAME" value="checkInfoOfSingleContactTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="UserCreationTests.canCreateUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mantis_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ca.stqa.mantis.tests.UserCreationTests.canCreateUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
-    <configuration name="ContactInfoTest.checkPhonesOfSingleContactTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
-      <option name="METHOD_NAME" value="checkPhonesOfSingleContactTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="UserCreationTests.canCreateUserWithLocalEmailServer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mantis_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ca.stqa.mantis.tests.UserCreationTests.canCreateUserWithLocalEmailServer&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
-    <configuration name="ContactInfoTest.checkPhonesOfSingleContactWithDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="address_book_web_tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ContactInfoTest" />
-      <option name="METHOD_NAME" value="checkPhonesOfSingleContactWithDBTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="UserRegistrationTest.canRegisterUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/mantis_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ca.stqa.mantis.tests.UserRegistrationTest.canRegisterUser&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="sandbox" />
@@ -192,11 +278,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContactInfoTest.checkInfoOfSingleContactTest" />
-        <item itemvalue="JUnit.ContactCreationTests.createMultipleContactsHbmTest" />
-        <item itemvalue="JUnit.ContactInfoTest.checkPhonesOfSingleContactTest" />
-        <item itemvalue="JUnit.ContactInfoTest.checkPhonesOfSingleContactWithDBTest" />
-        <item itemvalue="JUnit.ContactInfoTest.checkEmailsOfSingleContactTest" />
+        <item itemvalue="Gradle.UserCreationTests.canCreateUser" />
+        <item itemvalue="Gradle.UserCreationTests.canCreateUserWithLocalEmailServer" />
+        <item itemvalue="Gradle.UserRegistrationTest.canRegisterUser" />
+        <item itemvalue="Gradle.MailTests.canExtractUrl" />
+        <item itemvalue="Gradle.MailTests.canReceiveMail" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +423,47 @@
       <option name="project" value="LOCAL" />
       <updated>1699660021931</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Assignment 16 corrections">
+      <option name="closed" value="true" />
+      <created>1699921912011</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699921912011</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Lessons 8.1, 8.2; Assignment 17">
+      <option name="closed" value="true" />
+      <created>1699926595879</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699926595879</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Lesson 8.3">
+      <option name="closed" value="true" />
+      <created>1699929765717</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699929765717</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Lessons 8.4, 8.5, 8.6">
+      <option name="closed" value="true" />
+      <created>1700004493542</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700004493542</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Assignment 18">
+      <option name="closed" value="true" />
+      <created>1700011623403</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1700011623403</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -357,6 +483,27 @@
     <MESSAGE value="Assignment 15, corrections" />
     <MESSAGE value="Lessons 7.1, 7.2, 7.3, 7.4" />
     <MESSAGE value="Lessons 7.5, 7.6; Assignment 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lessons 7.5, 7.6; Assignment 16" />
+    <MESSAGE value="Assignment 16 corrections" />
+    <MESSAGE value="Lessons 8.1, 8.2; Assignment 17" />
+    <MESSAGE value="Lesson 8.3" />
+    <MESSAGE value="Lessons 8.4, 8.5, 8.6" />
+    <MESSAGE value="Assignment 18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Assignment 18" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/tests/UserCreationTests.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mantis_tests/src/test/java/ca/stqa/mantis/tests/UserCreationTests.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

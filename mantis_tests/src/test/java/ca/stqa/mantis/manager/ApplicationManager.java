@@ -1,5 +1,6 @@
 package ca.stqa.mantis.manager;
 
+import ca.stqa.mantis.model.DeveloperMailUser;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,9 @@ public class ApplicationManager {
     private WebSessionHelper webSessionHelper;
     private HttpSessionHelper httpSessionHelper;
     private JamesCliHelper jamesCliHelper;
+    private JamesApiHelper jamesApiHelper;
     private MailHelper mailHelper;
+    private DeveloperMailHelper developerMailHelper;
 
 
     public void initSession(String browser, Properties properties) {
@@ -63,11 +66,25 @@ public class ApplicationManager {
         return jamesCliHelper;
     }
 
+    public JamesApiHelper jamesApi(){
+        if(jamesApiHelper == null) {
+            jamesApiHelper = new JamesApiHelper(this);
+        }
+        return jamesApiHelper;
+    }
+
     public MailHelper mail(){
         if(mailHelper == null) {
             mailHelper = new MailHelper(this);
         }
         return mailHelper;
+    }
+
+    public DeveloperMailHelper developerMail(){
+        if(developerMailHelper == null) {
+            developerMailHelper = new DeveloperMailHelper(this);
+        }
+        return developerMailHelper;
     }
 
     public String property(String propertyName){

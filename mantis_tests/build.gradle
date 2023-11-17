@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'org.hidetake.swagger.generator' version '2.19.2'
 }
 
 group = 'org.example'
@@ -16,8 +17,19 @@ dependencies {
     testImplementation"com.squareup.okhttp3:okhttp:4.11.0"
     testImplementation"com.squareup.okhttp3:okhttp-urlconnection:4.11.0"
     implementation 'org.eclipse.angus:angus-mail:2.0.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    swaggerCodegen 'io.swagger:swagger-codegen-cli:2.4.34'
 }
 
 test {
     useJUnitPlatform()
+}
+
+swaggerSources {
+    mantis {
+        inputFile = file('swagger.json')
+        code {
+            language = 'java'
+        }
+    }
 }
