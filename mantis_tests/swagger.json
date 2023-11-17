@@ -11,7 +11,7 @@
   "produces": [
     "application/json"
   ],
-  "basePath": "/api/rest",
+  "basePath": "/mantisbt-2.26.0/api/rest",
   "paths": {
     "/issues": {
       "get": {

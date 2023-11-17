@@ -1,6 +1,5 @@
 package ca.stqa.mantis.manager;
 
-import ca.stqa.mantis.model.DeveloperMailUser;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,7 +19,7 @@ public class ApplicationManager {
     private JamesApiHelper jamesApiHelper;
     private MailHelper mailHelper;
     private DeveloperMailHelper developerMailHelper;
-
+    private RestApiHelper restApiHelper;
 
     public void initSession(String browser, Properties properties) {
         this.browser = browser;
@@ -28,11 +27,11 @@ public class ApplicationManager {
 
     }
 
-    public WebDriver driver(){
+    public WebDriver driver() {
         if (driver == null) {
-            if (browser.equals("chrome")){
+            if (browser.equals("chrome")) {
                 driver = new ChromeDriver();
-            } else if (browser.equals("firefox")){
+            } else if (browser.equals("firefox")) {
                 driver = new FirefoxDriver();
             } else {
                 throw new IllegalArgumentException(String.format("Unknown browser: %s", browser));
@@ -45,49 +44,56 @@ public class ApplicationManager {
         return driver;
     }
 
-    public WebSessionHelper web(){
-        if(webSessionHelper == null) {
+    public WebSessionHelper web() {
+        if (webSessionHelper == null) {
             webSessionHelper = new WebSessionHelper(this);
         }
         return webSessionHelper;
     }
 
-    public HttpSessionHelper http(){
-        if(httpSessionHelper == null) {
+    public HttpSessionHelper http() {
+        if (httpSessionHelper == null) {
             httpSessionHelper = new HttpSessionHelper(this);
         }
         return httpSessionHelper;
     }
 
-    public JamesCliHelper jamesCli(){
-        if(jamesCliHelper == null) {
+    public JamesCliHelper jamesCli() {
+        if (jamesCliHelper == null) {
             jamesCliHelper = new JamesCliHelper(this);
         }
         return jamesCliHelper;
     }
 
-    public JamesApiHelper jamesApi(){
-        if(jamesApiHelper == null) {
+    public JamesApiHelper jamesApi() {
+        if (jamesApiHelper == null) {
             jamesApiHelper = new JamesApiHelper(this);
         }
         return jamesApiHelper;
     }
 
-    public MailHelper mail(){
-        if(mailHelper == null) {
+    public MailHelper mail() {
+        if (mailHelper == null) {
             mailHelper = new MailHelper(this);
         }
         return mailHelper;
     }
 
-    public DeveloperMailHelper developerMail(){
-        if(developerMailHelper == null) {
+    public DeveloperMailHelper developerMail() {
+        if (developerMailHelper == null) {
             developerMailHelper = new DeveloperMailHelper(this);
         }
         return developerMailHelper;
     }
 
-    public String property(String propertyName){
+    public RestApiHelper rest() {
+        if (restApiHelper == null) {
+            restApiHelper = new RestApiHelper(this);
+        }
+        return restApiHelper;
+    }
+
+    public String property(String propertyName) {
         return properties.getProperty(propertyName);
     }
 
