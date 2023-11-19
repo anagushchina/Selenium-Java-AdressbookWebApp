@@ -1,5 +1,6 @@
 package tests;
 
+import common.Utils;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -28,8 +29,9 @@ public class GroupRemovalTests extends TestBase {
     @Test
     public void removeAllGroupsAtOnce() {
         if (appMan.initHbm().getGroupCount() == 0) {
-            appMan.initHbm().createGroup(new GroupData());
+            appMan.initHbm().createGroup(new GroupData().withName(Utils.randomString(10)));
         }
+        appMan.refreshPage();
         appMan.initGroupHelper().removeAllGroups();
         Assertions.assertEquals(0, appMan.initHbm().getGroupCount());
     }

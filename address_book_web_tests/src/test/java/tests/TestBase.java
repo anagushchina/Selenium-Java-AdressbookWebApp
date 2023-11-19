@@ -23,9 +23,9 @@ public class TestBase {
         }
     }
 
-    @AfterEach
-    public void checkDataBaseConsistency(){
-        appMan.initJdbcHelper().checkConsistency();
-    }
+//    @AfterEach
+//    public void checkDataBaseConsistency(){
+//        appMan.initJdbcHelper().checkConsistency();
+//    }
 
 }

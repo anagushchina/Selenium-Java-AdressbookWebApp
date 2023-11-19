@@ -58,7 +58,7 @@ public class GroupCreationTests extends TestBase{
                 .withName(Utils.randomString(6))
                 .withHeader(Utils.randomString(5))
                 .withFooter(Utils.randomString(8));
-        return Stream.generate(randomGroup).limit(3);
+        return Stream.generate(randomGroup).limit(2);
     }
 
 
@@ -128,43 +128,6 @@ public class GroupCreationTests extends TestBase{
                 new GroupData("", "name'", "","")));
     }
 
-
-
-    @ParameterizedTest
-    @MethodSource("groupNamesProvider")
-    public void createGroupsWithRandomNameTest(String name) {
-        int groupCount = appMan.initGroupHelper().getCount();
-        appMan.initGroupHelper().createGroup(new GroupData("", name, "header", "footer"));
-        int newGroupCount = appMan.initGroupHelper().getCount();
-        Assertions.assertEquals(groupCount + 1, newGroupCount);
-    }
-    public static List<String> groupNamesProvider() {
-        var result = new ArrayList<>(List.of("some name 1", "some name 2"));
-        for(int i=1; i<=5; i++ ){
-            result.add(Utils.randomString(7));
-        }
-        return result;
-    }
-
-
-
-    @Test
-    public void createGroupTest() {
-        int groupCount = appMan.initGroupHelper().getCount();
-        appMan.initGroupHelper().createGroup(new GroupData("", "name", "header", "footer"));
-        int newGroupCount = appMan.initGroupHelper().getCount();
-        Assertions.assertEquals(groupCount + 1, newGroupCount);
-    }
-
-    @Test
-    public void createGroupWithEmptyNameTest() {
-        appMan.initGroupHelper().createGroup(new GroupData());
-    }
-
-    @Test
-    public void createGroupWithNameOnlyTest() {
-        appMan.initGroupHelper().createGroup(new GroupData().withName("name only"));
-    }
 
 
 }

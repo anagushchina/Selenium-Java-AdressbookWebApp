@@ -9,7 +9,7 @@ import java.util.*;
 
 public class GroupModificationTests extends TestBase {
 
-    //precondition (group creation) and getting list of groups from DB, using Hibernate library
+//    precondition (group creation) and getting list of groups from DB, using Hibernate library
     @Test
     void modifyGroupHbmTest() {
         if (appMan.initHbm().getGroupCount() == 0) {
@@ -28,7 +28,7 @@ public class GroupModificationTests extends TestBase {
 
 
 
-    //all actions via UI
+//    all actions via UI
     @Test
     void modifyGroupTest() {
         if (appMan.initGroupHelper().getCount() == 0) {

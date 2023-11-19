@@ -38,7 +38,7 @@ public class ContactRemovalTests extends TestBase {
     }
 
 
-    //all actions via UI
+//    //all actions via UI
     @Test
     public void removeContactTest() {
         if (!appMan.initContactHelper().isContactPresent()) {

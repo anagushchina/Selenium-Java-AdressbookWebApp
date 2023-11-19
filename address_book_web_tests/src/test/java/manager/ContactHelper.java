@@ -1,5 +1,6 @@
 package manager;
 
+import io.qameta.allure.Step;
 import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
@@ -18,6 +19,7 @@ public class ContactHelper extends HelperBase {
         super(manager);
     }
 
+    @Step
     public void createContact(ContactData contact) {
         initContactCreation();
         fillContactForm(contact);
@@ -25,6 +27,7 @@ public class ContactHelper extends HelperBase {
         returnToHomePage();
     }
 
+    @Step
     public void createContact(ContactData contact, GroupData group) {
         initContactCreation();
         fillContactForm(contact);
@@ -145,6 +148,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void addContactToGroup(ContactData contact, GroupData group) {
+        returnToHomePage();
         selectContact(contact);
         selectGroupToMoveContact(group);
         addToSelectedGroup();

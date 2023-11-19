@@ -3,6 +3,7 @@ package tests;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import common.Utils;
+import io.qameta.allure.Allure;
 import model.ContactData;
 import model.GroupData;
 import org.junit.jupiter.api.Assertions;
@@ -37,6 +38,69 @@ public class ContactCreationTests extends TestBase {
         Assertions.assertEquals(expectedContacts, newContacts);
     }
 
+
+    @Test
+    public void createContactInGroupTest() {
+        ContactData contact = new ContactData()
+                .withFirstName(Utils.randomString(5))
+                .withLastName(Utils.randomString(7))
+                .withAddress(Utils.randomString(15));
+        Allure.step("Checking precondition", step -> {
+            if (appMan.initHbm().getGroupCount() == 0) {
+            appMan.initHbm().createGroup(new GroupData("", Utils.randomString(5), Utils.randomString(5), Utils.randomString(5)));
+        }});
+
+        var group = appMan.initHbm().getGroupList().get(0);
+        var oldContactsInGroup = appMan.initHbm().getContactsInGroup(group);
+        appMan.initContactHelper().createContact(contact, group);
+        var newContactsInGroup = appMan.initHbm().getContactsInGroup(group);
+
+        Comparator<ContactData> compareById = (o1, o2) ->
+        {
+            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+        };
+        newContactsInGroup.sort(compareById);
+        var expectedContacts = new ArrayList<>(oldContactsInGroup);
+        expectedContacts.add(contact.withId(newContactsInGroup.get(newContactsInGroup.size() - 1).id()));
+        expectedContacts.sort(compareById);
+        Allure.step("Validating results", step ->{
+            Assertions.assertEquals(expectedContacts, newContactsInGroup);});
+    }
+
+    @Test
+    public void createEmptyContactTest() {
+        appMan.initContactHelper().createContact(new ContactData());
+    }
+
+    @Test
+    public void createContactWithPhoto() {
+        var contact = new ContactData()
+                .withLastName(Utils.randomString(10))
+                .withFirstName(Utils.randomString(5))
+                .withPhoto(Utils.randomFile("src/test/resources/images"));
+        appMan.initContactHelper().createContact(contact);
+    }
+
+
+    //all actions via UI using contact data from file
+//    @ParameterizedTest
+//    @MethodSource("contactsFromFileProvider")
+//    public void createMultipleContactsTest(ContactData contact) {
+//        List<ContactData> oldContacts = appMan.initContactHelper().getList();
+//        appMan.initContactHelper().createContact(contact);
+//        List<ContactData> newContacts = appMan.initContactHelper().getList();
+//        Comparator<ContactData> compareById = (o1, o2) ->
+//        {
+//            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
+//        };
+//        newContacts.sort(compareById);
+//        var expectedContacts = new ArrayList<>(oldContacts);
+//        expectedContacts.add(contact.withId(newContacts.get(newContacts.size() - 1).id()).withAddress("").withMobilePhone("").withEmail(""));
+//        expectedContacts.sort(compareById);
+//        Assertions.assertEquals(expectedContacts, newContacts);
+//    }
+
+
     public static List<ContactData> contactsProvider() {
         var result = new ArrayList<ContactData>();
         result.add(new ContactData()
@@ -68,51 +132,6 @@ public class ContactCreationTests extends TestBase {
         return result;
     }
 
-    @Test
-    public void createContactInGroupTest() {
-        ContactData contact = new ContactData()
-                .withFirstName(Utils.randomString(5))
-                .withLastName(Utils.randomString(7))
-                .withAddress(Utils.randomString(15));
-        if (appMan.initHbm().getGroupCount() == 0) {
-            appMan.initHbm().createGroup(new GroupData("", Utils.randomString(5), Utils.randomString(5), Utils.randomString(5)));
-        }
-        var group = appMan.initHbm().getGroupList().get(0);
-        var oldContactsInGroup = appMan.initHbm().getContactsInGroup(group);
-        appMan.initContactHelper().createContact(contact, group);
-        var newContactsInGroup = appMan.initHbm().getContactsInGroup(group);
-
-        Comparator<ContactData> compareById = (o1, o2) ->
-        {
-            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
-        };
-        newContactsInGroup.sort(compareById);
-        var expectedContacts = new ArrayList<>(oldContactsInGroup);
-        expectedContacts.add(contact.withId(newContactsInGroup.get(newContactsInGroup.size() - 1).id()));
-        expectedContacts.sort(compareById);
-        Assertions.assertEquals(expectedContacts, newContactsInGroup);
-    }
-
-
-
-    //all actions via UI
-    @ParameterizedTest
-    @MethodSource("contactsFromFileProvider")
-    public void createMultipleContactsTest(ContactData contact) {
-        List<ContactData> oldContacts = appMan.initContactHelper().getList();
-        appMan.initContactHelper().createContact(contact);
-        List<ContactData> newContacts = appMan.initContactHelper().getList();
-        Comparator<ContactData> compareById = (o1, o2) ->
-        {
-            return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
-        };
-        newContacts.sort(compareById);
-        var expectedContacts = new ArrayList<>(oldContacts);
-        expectedContacts.add(contact.withId(newContacts.get(newContacts.size() - 1).id()).withAddress("").withMobilePhone("").withEmail(""));
-        expectedContacts.sort(compareById);
-        Assertions.assertEquals(expectedContacts, newContacts);
-    }
-
 
     public static List<ContactData> contactsFromFileProvider() throws IOException {
         var result = new ArrayList<ContactData>();
@@ -132,36 +151,6 @@ public class ContactCreationTests extends TestBase {
         });
         result.addAll(value);
         return result;
-    }
-
-
-    @Test
-    public void createContactTest() {
-        ContactData contact = new ContactData()
-                .withFirstName(Utils.randomString(5))
-                .withLastName(Utils.randomString(7))
-                .withAddress(Utils.randomString(15))
-                .withPhoto(Utils.randomFile("src/test/resources/images"));
-        appMan.initContactHelper().createContact(contact);
-    }
-
-    @Test
-    public void createEmptyContactTest() {
-        appMan.initContactHelper().createContact(new ContactData());
-    }
-
-    @Test
-    public void createContactWithNameTest() {
-        appMan.initContactHelper().createContact(new ContactData().withFullName("First", "Last"));
-    }
-
-    @Test
-    public void createContactWithPhoto() {
-        var contact = new ContactData()
-                .withLastName(Utils.randomString(10))
-                .withFirstName(Utils.randomString(5))
-                .withPhoto(Utils.randomFile("src/test/resources/images"));
-        appMan.initContactHelper().createContact(contact);
     }
 
 

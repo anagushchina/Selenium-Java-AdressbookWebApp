@@ -70,8 +70,17 @@ public class Generator {
 
     private Object generateContacts() {
         return generateData(()-> new ContactData()
-                    .withFirstName(Utils.randomString(3))
-                    .withLastName(Utils.randomString(3)));
+                .withFirstName(Utils.randomString(5))
+                .withMiddleName(Utils.randomString(5))
+                .withLastName(Utils.randomString(7))
+                .withCompany(Utils.randomString(5).toUpperCase())
+                .withAddress(Utils.randomString(15))
+                .withHomePhone(Utils.randomNumber(10))
+                .withMobilePhone(Utils.randomNumber(10))
+                .withWorkPhone(Utils.randomNumber(10))
+                .withEmail(Utils.randomString(5) + "@domain.do")
+                .withEmail2(Utils.randomString(5) + "@domain.do")
+                .withEmail3(Utils.randomString(5) + "@domain.do"));
     }
 
 
