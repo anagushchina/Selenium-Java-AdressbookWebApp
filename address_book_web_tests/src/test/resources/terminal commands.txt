@@ -1,0 +1,32 @@
+the following commands should be run from folder with tests: ana@Anastasiias-MacBook-Air address_book_web_tests %
+
+run all tests
+./gradlew clean test
+
+run specified test on local machine
+./gradlew clean test --tests "*.ContactCreationTests.createContactInGroupTest"
+
+run tests on remote server (server address is in the file ci.properties)
+./gradlew -Ptarget=ci.properties clean test --tests "*.ContactCreationTests.createContactInGroupTest"
+
+get all java versions that included in veriable java_home
+/usr/libexec/java_home -V
+
+generate allure report and immediately open it on web server
+/Users/ana/tools/allure-2.24.1/bin/allure serve
+
+generate allure report and save it in allure-reports folder.
+/Users/ana/tools/allure-2.24.1/bin/allure generate --clean
+To view the report you need to publish it on some web server,
+e.g. you can copy allure-report folder in XAMPP/htdocs and open the report from there
+
+
+The following commands should be run from corresponding folders located in users/ana/tools:
+run selenium server:
+ana@Anastasiias-MacBook-Air selenium-server % java -jar selenium-server-4.15.0.jar standalone
+
+run jenkins:
+ana@Anastasiias-MacBook-Air jenkins % java -jar jenkins.war --enable-future-java
+
+run james server (email)
+ana@Anastasiias-MacBook-Air james-server-jpa-guice % java -Dworking.directory=. -jar james-server-jpa-app.jar
